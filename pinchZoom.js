@@ -1,4 +1,3 @@
-
 // Global vars to cache event state
 var evCache = new Array();
 var prevDiff = -1;
@@ -124,7 +123,7 @@ function elementsInPinch(zeroX, zeroY, oneX, oneY){
       }
   }
   console.log(">> send pinchzoom event info");
-  makeRequest(JSON.stringify({timestamp: new Date().getTime(), elements: String(htmlElements)}, 'pinchzoom'));
+  makeRequest(JSON.stringify({timestamp: new Date().toJSON(), elements: JSON.stringify(htmlElements), type: 'pinchzoom'}));
 }
 
 function insidePinch(x1, x2, y1, y2, elemRect){
