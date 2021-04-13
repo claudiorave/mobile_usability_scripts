@@ -1,5 +1,5 @@
 var http = new XMLHttpRequest ();
-var url = "http://localhost:1701/register";
+var url = "https://mobilelogger.claudioraverta.com/register";
 /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
 

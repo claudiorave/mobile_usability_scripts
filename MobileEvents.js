@@ -3,7 +3,7 @@
 function makeRequest(jsonElements, tipo) {
   var http = new XMLHttpRequest();
   console.log(tipo)
-  var url = "http://23f456611024.ngrok.io/event/";
+  var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   console.log(url);
