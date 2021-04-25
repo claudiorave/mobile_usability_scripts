@@ -145,7 +145,7 @@
     //referencia al obj que se realizo el evento
     scrollEventInfo.setDomScrollObj( createXPathFromElement( domCurrentObj ) );
     //envio de info a Pharo server
-    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), scroll_objects:JSON.stringify(scrollEventInfo.domScrollObj)}  ) );
+    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), scroll_objects:JSON.stringify(scrollEventInfo.domScrollObj), type:'scroll'}  ) );
      
     resetScrollDataInfo();
   }
