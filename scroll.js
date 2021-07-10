@@ -14,7 +14,7 @@
     {
       this.class ="Scroll";
       this.timestamp = Date.now();
-      this.domScrollObj;
+      this.domScrollObj  = new Array();
       this.arrayScrollPoints = new Array( );
     } 
     addScrollPoint(scrollPoint)
@@ -23,7 +23,7 @@
     }
     setDomScrollObj( domObj )
     {
-      this.domScrollObj = domObj;
+      this.domScrollObj.push({"xpath": domObj});
     }
   }
 
@@ -145,8 +145,8 @@
     //referencia al obj que se realizo el evento
     scrollEventInfo.setDomScrollObj( createXPathFromElement( domCurrentObj ) );
     //envio de info a Pharo server
-    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), scroll_objects:JSON.stringify(scrollEventInfo.domScrollObj), type:'scroll'}  ) );
-     
+    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), elements:scrollEventInfo.domScrollObj, type:'scroll'}  ) );
+    
     resetScrollDataInfo();
   }
 

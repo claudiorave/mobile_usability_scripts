@@ -21,13 +21,15 @@ function elementosRadio() {
       document.getElementsByTagName("*")
     );
     console.log(htmlElements);
+    let current_datetime = new Date();
+    let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
     makeRequest(
       JSON.stringify({
         type: "misclick",
         x: event.clientX,
         y: event.clientY,
-        elements: JSON.stringify(htmlElements),
-        timestamp: new Date().toJSON(),
+        elements: htmlElements,
+        timestamp:  new Date(),
       })
     );
 
@@ -66,7 +68,7 @@ function elementsInRadio(center_x, center_y, radio, todos) {
       console.log(todos[i]);
       todos[i].classList.add("boxShadow");
 
-      htmlElements.push({ XPath: createXPathFromElement(todos[i]) });
+      htmlElements.push({ xpath: createXPathFromElement(todos[i]) });
     }
   }
   return htmlElements;

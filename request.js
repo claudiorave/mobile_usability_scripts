@@ -1,5 +1,5 @@
 var http = new XMLHttpRequest ();
-var url = "https://mobilelogger.claudioraverta.com/register";
+var url = "http://d9137c6e5c0e.ngrok.io/register";
 /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
 
