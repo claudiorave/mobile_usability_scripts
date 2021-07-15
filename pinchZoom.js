@@ -172,22 +172,6 @@ return true;
 
 }  
 
-/* function logEventPharoPinch (jsonElements) {
-  var http = new XMLHttpRequest ();
-  var url = "http://localhost:1701/register";
-
-
-  http.open("POST", url, true);
-
-
-  http.onreadystatechange = function() {
-      if(http.readyState == 4 && http.status == 200) { 
-      //aqui obtienes la respuesta de tu peticion
-      alert(http.responseText);
-      }
-  }
- http.send(jsonElements);
-} */
 
   var zoomInfo=document.getElementById("target");
   window.onpointerdown = pointerdown_handler;

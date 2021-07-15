@@ -101,25 +101,5 @@ function printProperties(center_x, center_y, radio) {
   console.log(">>send click event info");
 }
 
-function logEventPharo(center_x, center_y) {
-  var http = new XMLHttpRequest();
-  var url = "http://localhost:1701/register";
-
-  http.open("POST", url, true);
-
-  http.onreadystatechange = function () {
-    if (http.readyState == 4 && http.status == 200) {
-      //aqui obtienes la respuesta de tu peticion
-      alert(http.responseText);
-    }
-  };
-  http.send(
-    JSON.stringify({
-      x: center_x,
-      y: center_y,
-      timestamp: new Date().getTime(),
-    })
-  );
-}
 
 elementosRadio();
