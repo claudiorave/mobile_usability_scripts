@@ -7,6 +7,17 @@
     padding: 10px;
     background: #f1f1f1;
   }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .menu a{
+    width: 40%;
+    margin-bottom: 30px;
+  }
 
   .boxShadow{
     /* border-style: solid; */

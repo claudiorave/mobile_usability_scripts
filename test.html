@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="css/defaulStyle.css">
+  <link rel="stylesheet" href="css/scrollStyle.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body >
+<div class="header">
+  <h1>My Website</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div  class="card">
+      <h2>ZOOM PINCH</h2>
+      <h5>Información del zoom pinch</h5>
+      <div id="target" style="height:200px;">
+      <p class="zoomInfo">Touch 1 X: <span id="t1X">   </span> Y: <span id="t1Y"></span></p> 
+      <p class="zoomInfo">Touch 2 X: <span id="t2X">   </span> Y: <span id="t2Y"></span></p>
+      
+      </div>
+      <p>Cambia a color rosa si el zoom se expande, celeste cuando se achica</p>
+      
+    </div>
+
+    <div id="scrollEvent" class="card">
+      <h2>SCROLL</h2>
+      <h5>Información del scroll</h5>
+
+      <div>
+        <p class="scrollInfo">Scroll X: <span id="scrollX">  </span> </p> 
+        <p class="scrollInfo">Scroll Y: <span id="scrollY">   </span></p>
+      </div>
+
+      <div class="scrollTest" > 
+
+        <div >
+          <p>ini..</p>
+          <br><br><br><br><br><br><br><br><br><br>
+          <p>mid..</p>
+          <br><br><br><br><br><br><br><br><br><br>
+          <p>fin..</p>
+        </div>
+      
+      </div>
+
+    </div>
+    <div id="scrollEvent2" class="card">
+      <h2>SCROLL</h2>
+      <h5>Información del scroll</h5>
+
+      <div>
+        <p class="scrollInfo">Scroll X: <span id="scrollX">  </span> </p> 
+        <p class="scrollInfo">Scroll Y: <span id="scrollY">   </span></p>
+      </div>
+
+      <div class="scrollTest" > 
+
+        <div >
+          <p>ini..</p>
+          <br><br><br><br><br><br><br><br><br><br>
+          <p>mid..</p>
+          <br><br><br><br><br><br><br><br><br><br>
+          <p>fin..</p>
+        </div>
+      
+      </div>
+
+    </div>
+
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px; border: black;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    </div>
+
+</div>
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+<script src="MobileEvents.js"></script>
+<script src="scriptDot.js"></script>
+<script src="elementosRadio.js"></script>
+<script src="pinchZoom.js"></script>
+<script src="scroll.js"></script>
+<script src="orientation.js"></script>
+</body>
+</html>
