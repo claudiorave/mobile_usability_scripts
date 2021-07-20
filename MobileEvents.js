@@ -1,12 +1,10 @@
 //ACÁ VAN LAS FUNCIONES USADAS EN COMÚN
 
-function makeRequest(jsonElements, tipo) {
+function makeRequest(jsonElements) {
   var http = new XMLHttpRequest();
-  console.log(tipo)
   var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
-  console.log(url);
   http.open("POST", url, true);
 
   http.onreadystatechange = function () {
