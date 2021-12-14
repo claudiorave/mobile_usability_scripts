@@ -2,7 +2,7 @@
 
 function makeRequest(jsonElements) {
   var http = new XMLHttpRequest();
-  var url = "http://mobilelogger.claudioraverta.com/event/";
+  var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);
