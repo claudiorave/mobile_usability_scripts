@@ -30,6 +30,7 @@ function elementosRadio() {
         y: event.clientY,
         elements: htmlElements,
         timestamp:  new Date(),
+        session: sessionStorage.token,
       })
     );
 

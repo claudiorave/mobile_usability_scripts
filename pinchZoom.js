@@ -123,7 +123,7 @@ function elementsInPinch(zeroX, zeroY, oneX, oneY){
       }
   }
   console.log(">> send pinchzoom event info");
-  makeRequest(JSON.stringify({timestamp: new Date().toJSON(), elements: htmlElements, type: 'pinchzoom'}));
+  makeRequest(JSON.stringify({timestamp: new Date().toJSON(), elements: htmlElements, type: 'pinchzoom', session: sessionStorage.token}));
 }
 
 function insidePinch(x1, x2, y1, y2, elemRect){
