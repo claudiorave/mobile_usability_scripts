@@ -1,16 +1,3 @@
-@media only screen and (max-width: 768px) {
-.sgpb-popup-close-button-2{
-    height : 40px !important;
-    width: 40px !important;
-}
-.services .col3{
-    width:100% !important
-}
-.column.col6, .column.col6solo{
-    width:100% !important
-}
-}
-
 .modal {
     /* padding: 0 !important; */
     z-index: 999999 !important; 
