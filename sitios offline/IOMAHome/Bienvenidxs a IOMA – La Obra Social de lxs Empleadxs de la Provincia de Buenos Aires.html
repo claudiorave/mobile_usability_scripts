@@ -1637,7 +1637,7 @@
                         />Llegamos a 18 mil hogares para evitar que salieran de
                         sus casas durante la cuarentena. Sumadas a las dadas en
                         farmacias y en organismos alcanzamos las 30 mil, casi
-                        duplicando las 16 mil de 2019.
+                        duplicando las <span id="usabilidadSpan">16 mil de 2019.</span>
                       </p>
                     </div>
                   </div>
@@ -1659,7 +1659,7 @@
                           ><img
                             src="./Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires_files/medicamentos-02.jpg"
                           />Para renovar un trámite MEPPES, sólo debés acercarte
-                          a una Delegación o <span id="usabilidadSpan">usabilidad</span> de IOMA, con receta de papel
+                          a una Delegación o Región de IOMA, con receta de papel
                           o con su imagen en forma digital. Más info</a
                         >
                       </p>
@@ -2005,15 +2005,15 @@
                 <div class="widget-title heading">Buscador</div>
                 <form
                   role="search"
-                  onsubmit="tarea3(event)"
+                  onsubmit=""
                   method="get"
                   id="searchform"
                   class="searchform"
-                  action="http://www.ioma.gba.gob.ar/"
+                  action=""
                 >
                   <div>
                     <label class="screen-reader-text" for="s">Buscar:</label>
-                    <input type="text" value="" name="s" id="s" />
+                    <input type="text" value="" name="searchInput" id="s" />
                     <input type="submit" id="searchsubmit" value="Buscar" />
                   </div>
                 </form>
@@ -2723,8 +2723,8 @@
             <h5 class="modal-title">Tarea 2</h5>
           </div>
           <div class="modal-body">
-            <p>En algún lugar de esta página se encuentra escrita la palabra "usabilidad"</p>
-            <p>Encuentrela y presione sobre la misma</p>
+            <p>En algún lugar de esta página se indica la cantidad de vacunas antigripales suministradas en 2019</p>
+            <p>Encuentrela la cifra y presione sobre la misma</p>
           </div>
           <div class="modal-footer">
             <button type="button" onclick="tarea2(Event)" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
@@ -2743,7 +2743,7 @@
             <p>Encuéntrelo, ingrese la palabra "fin" y presione el botón de buscar</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+            <button type="button" onclick="openTarea3()" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
           </div>
         </div>
       </div>
@@ -2783,4 +2783,5 @@
         $("#myModal").modal("show");
       });
     </script>
+    </body>
 </html>

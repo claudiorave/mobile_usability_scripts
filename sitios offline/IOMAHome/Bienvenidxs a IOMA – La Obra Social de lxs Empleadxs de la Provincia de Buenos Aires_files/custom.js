@@ -24,9 +24,23 @@ $("#usabilidadSpan").click(tarea2Helper);
     const tarea3 = function(event)
     {   
   event.preventDefault();
+ 
+  if(event.target.searchInput.value === "fin"){
   $("#tareaFin").modal("show");
+  }
   
       }
+
+      const openTarea3 = function(){
+        $('#searchform').submit(function() {
+          return tarea3(event);
+      });
+      }
+
+      
+  $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+  
+
 
 
   

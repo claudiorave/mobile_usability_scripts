@@ -14,6 +14,10 @@
       crossorigin="anonymous"
     />
     <link
+    href="./Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires_files/normalizeReset.css"
+    rel="stylesheet"
+  />
+    <link
       href="./Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires_files/css"
       rel="stylesheet"
     />
@@ -927,6 +931,22 @@
             </ul>
             <div class="clear"></div>
           </div>
+          <div id="search-3" class="widget widget_search">
+            <!-- <div class="widget-title heading">Buscador</div> -->
+            <form
+              role="search"
+              method="get"
+              id="searchform"
+              class="searchform"
+              action=""
+            >
+              <div>
+                <!-- <label class="screen-reader-text" for="s">Buscar:</label> -->
+                <input type="text" value="" placeholder="Buscar..." name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="Buscar" />
+              </div>
+            </form>
+          <!-- </div> -->
         </header>
         <div id="slider" class="slider">
           <div
@@ -1633,7 +1653,7 @@
                         />Llegamos a 18 mil hogares para evitar que salieran de
                         sus casas durante la cuarentena. Sumadas a las dadas en
                         farmacias y en organismos alcanzamos las 30 mil, casi
-                        duplicando las 16 mil de 2019.
+                        duplicando las <span id="usabilidadSpan">16 mil de 2019.</span>
                       </p>
                     </div>
                   </div>
@@ -1997,7 +2017,7 @@
               </div>
             </div>
             <div class="column col3 col-last">
-              <div id="search-3" class="widget widget_search">
+              <!-- <div id="search-3" class="widget widget_search">
                 <div class="widget-title heading">Buscador</div>
                 <form
                   role="search"
@@ -2012,7 +2032,7 @@
                     <input type="submit" id="searchsubmit" value="Buscar" />
                   </div>
                 </form>
-              </div>
+              </div> -->
               <div
                 id="custom_html-6"
                 class="widget_text widget widget_custom_html"
@@ -2351,7 +2371,7 @@
       media="all"
     />
 
-    <script src="../../MobileEvents.js"></script>
+    <script src=".\Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires_files\MobileEvents.js"></script>
     <script src="../../scriptDot.js"></script>
     <script src="../../elementosRadio.js"></script>
     <script src="../../pinchZoom.js"></script>
@@ -2641,86 +2661,121 @@
       "
     ></div>
     <div
-      class="modal fade"
-      id="myModal"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel"
-      tabindex="-1"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel">
-              Bienvenid@!
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            La siguiente página contiene errores de diseño.<br /><br />
-            A través de unas pruebas sencillas usted podrá ayudar a su detección
-            de forma automática. <br /><br />
-            Si está list@ presione el botón "Siguiente" para comenzar.
-          </div>
-          <div class="modal-footer">
-            <button
-              class="btn btn-primary"
-              data-bs-target="#exampleModalToggle2"
-              data-bs-toggle="modal"
-              data-bs-dismiss="modal"
-            >
-              Siguiente
-            </button>
-          </div>
+    class="modal fade"
+    id="myModal"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">
+            Bienvenid@!
+          </h5>
+        </div>
+        <div class="modal-body">
+          A través de unas pruebas sencillas usted podrá ayudar a la detección
+          de problemas de usabilidad. <br /><br />
+          Presione el botón "Siguiente" para comenzar.
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle2"
+            data-bs-toggle="modal"
+            data-bs-dismiss="modal"
+          >
+            Siguiente
+          </button>
         </div>
       </div>
     </div>
-    <div
-      class="modal fade"
-      id="exampleModalToggle2"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel2"
-      tabindex="-1"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            Intente cerrar los anuncios que aparecen en la parte inferior de la
-            página
-          </div>
-          <div class="modal-footer">
-            <button
-              class="btn btn-secondary"
-              data-bs-target="#myModal"
-              data-bs-toggle="modal"
-              data-bs-dismiss="modal"
-            >
-              Volver
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Comenzar
-            </button>
-          </div>
+  </div>
+  <div
+    class="modal fade"
+    id="exampleModalToggle2"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
+        </div>
+        <div class="modal-body">
+          Intente cerrar los anuncios que aparecen en la parte inferior de la
+          página
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary"
+            data-bs-target="#myModal"
+            data-bs-toggle="modal"
+            data-bs-dismiss="modal"
+          >
+            Volver
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            onclick="$('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact)"
+          >
+            Comenzar
+          </button>
         </div>
       </div>
     </div>
+  </div>
+  <div class="modal" id="tarea2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tarea 2</h5>
+        </div>
+        <div class="modal-body">
+          <p>En algún lugar de esta página se indica la cantidad de vacunas antigripales suministradas en 2019</p>
+          <p>Encuentrela la cifra y presione sobre la misma</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="tarea2(Event)" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="tarea3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tarea 3</h5>
+        </div>
+        <div class="modal-body">
+          <p>En algún lugar de esta página se encuentra un buscador</p>
+          <p>Encuéntrelo, ingrese la palabra "fin" y presione el botón de buscar</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="openTarea3()" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="tareaFin" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Fin</h5>
+        </div>
+        <div class="modal-body">
+          <p>Gracias por participar!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
