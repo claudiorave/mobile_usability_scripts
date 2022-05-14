@@ -940,9 +940,9 @@
               class="searchform"
               action=""
             >
-              <div>
+              <div id="inputStyler">
                 <!-- <label class="screen-reader-text" for="s">Buscar:</label> -->
-                <input type="text" value="" placeholder="Buscar..." name="searchInput" id="s" />
+                <input type="text" value="" placeholder="Buscar..." id="searchInput" name="searchInput" id="s" />
                 <input type="submit" id="searchsubmit" value="Buscar" />
               </div>
             </form>
@@ -2016,23 +2016,6 @@
                 </div>
               </div>
             </div>
-            <div class="column col3 col-last">
-              <!-- <div id="search-3" class="widget widget_search">
-                <div class="widget-title heading">Buscador</div>
-                <form
-                  role="search"
-                  method="get"
-                  id="searchform"
-                  class="searchform"
-                  action="http://www.ioma.gba.gob.ar/"
-                >
-                  <div>
-                    <label class="screen-reader-text" for="s">Buscar:</label>
-                    <input type="text" value="" name="s" id="s" />
-                    <input type="submit" id="searchsubmit" value="Buscar" />
-                  </div>
-                </form>
-              </div> -->
               <div
                 id="custom_html-6"
                 class="widget_text widget widget_custom_html"
@@ -2457,7 +2440,7 @@
     <script
       type="text/javascript"
       src="./Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires_files/custom.js"
-    ></script>
+    defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -2513,7 +2496,6 @@
             position: absolute;
             float: left;
             top: -20px;
-            left: 0px;
             width: 40px;
             cursor: pointer;
             height: 40px;
@@ -2618,7 +2600,7 @@
             height: 281px;
           "
         >
-          <div style="height: 100%; width: 100%; overflow: hidden">
+          <div class="popup" style="height: 100%; width: 100%; overflow: hidden">
             <div
               class="sg-popup-builder-content"
               id="sg-popup-content-wrapper-11850"

@@ -2042,7 +2042,7 @@ WIDGETS
     width: 40px;
     height: 100%;
     cursor: pointer;
-}
+  }
 
 .widget_search input[type=submit]:hover {
     background: none;

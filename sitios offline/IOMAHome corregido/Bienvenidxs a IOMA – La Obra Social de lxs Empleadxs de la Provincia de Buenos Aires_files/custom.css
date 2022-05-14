@@ -2,6 +2,8 @@
 .sgpb-popup-close-button-2{
     height : 40px !important;
     width: 40px !important;
+    right: 0 !important;
+    left: unset !important;
 }
 .services .col3{
     width:100% !important
@@ -49,3 +51,13 @@
   border: 1pm !important;
   border-color: black !important;
 }
+/* #searchInput{
+  width: 95% !important;
+  margin: auto !important;
+  } */
+
+#inputStyler{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
