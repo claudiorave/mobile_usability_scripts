@@ -42,6 +42,9 @@ $("#usabilidadSpan").click(tarea2Helper);
   $('.sg-popup-builder-content').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
   $('.popup').click(function(ev) { 
     ev.preventDefault(); ev.stopPropagation(); return false; });
+    $('#searchform').submit(function(event) {
+      event.preventDefault();
+  });
 
 
 
