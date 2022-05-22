@@ -14,7 +14,7 @@ var token = function() {
     
 function makeRequest(jsonElements) {
   var http = new XMLHttpRequest();
-  var url = "https://claudioraverta.mobilelogger.com/event/";
+  var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);
