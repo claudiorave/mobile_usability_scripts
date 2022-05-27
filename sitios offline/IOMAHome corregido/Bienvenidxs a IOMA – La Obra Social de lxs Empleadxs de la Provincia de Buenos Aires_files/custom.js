@@ -5,21 +5,16 @@ const clickSender = (event) => {
   removeStyleElementsInRadioPrevious();
 
   // let todos = document.getElementsByTagName("*");
-  let htmlElements = elementsInRadio(
-    event.clientX,
-    event.clientY,
-    55,
-    document.getElementsByTagName("*")
-  );
+  let htmlElements = createXPathFromElement(event.target);
   console.log(htmlElements);
   let current_datetime = new Date();
   let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
   makeRequest(
     JSON.stringify({
-      type: "misclick",
+      type: "click",
       x: event.clientX,
       y: event.clientY,
-      elements: htmlElements,
+      elements:[{xpath: htmlElements}] ,
       timestamp:  new Date(),
       session: sessionStorage.token,
     })
@@ -76,6 +71,7 @@ $("#usabilidadSpan").click(tarea2Helper);
   $('.popup').click(function(ev) { 
     ev.preventDefault(); ev.stopPropagation(); return false; });
     $('#searchform').submit(function(event) {
+    
       clickSender(event);
       event.preventDefault();
   });
