@@ -6,13 +6,13 @@ var rand = function() {
 var token = function() {
   return rand(); // to make it longer
 };    
-    sessionToken = "IOMAc" + token();
+    sessionToken = "IOMAcorregido" + token();
     sessionStorage.setItem("token", sessionToken);
     var md = new MobileDetect(window.navigator.userAgent);
     var json = JSON.stringify({type:"device",phone: md.phone(), mobile: md.mobile(), tablet: md.tablet(), user_agent: md.userAgent(), build: md.versionStr("Build"), webkit: md.version("Webkit"), os: md.os(), height: window.screen.height, width: window.screen.width, session: sessionToken})
     makeRequest(json) 
     
-function makeRequest(jsonElements) {
+function makeRequest(jsonElements, cFunction=null) {
   var http = new XMLHttpRequest();
   var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
@@ -21,7 +21,9 @@ var password = document.getElementById('pass');"*/
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
-      //aqui obtienes la respuesta de tu peticion
+      if (cFunction){
+        cFunction(this);
+      }
     }
   };
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");

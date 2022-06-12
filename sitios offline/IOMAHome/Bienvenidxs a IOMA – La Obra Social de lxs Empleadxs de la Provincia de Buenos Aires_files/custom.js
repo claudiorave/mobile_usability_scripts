@@ -1,5 +1,5 @@
 var clicks = 0;
-const clickSender = (event) => {
+const clickSender = (event, cFunction) => {
   console.log("CLICK CORRECTO");
   removeDotItemPrevious();
   removeStyleElementsInRadioPrevious();
@@ -17,7 +17,8 @@ const clickSender = (event) => {
       elements:[{xpath: htmlElements}] ,
       timestamp:  new Date(),
       session: sessionStorage.token,
-    })
+    }),
+    cFunction
   );
 
   //asignarle a los elemetos un style
@@ -47,14 +48,33 @@ const clickReact = function(event)
 $("#usabilidadSpan").click(tarea2Helper);
 
     }
-
+    const endSession= function(){
+      var http = new XMLHttpRequest();
+      var url = "https://mobilelogger.claudioraverta.com/session/"+sessionStorage.token+"/";
+      /*var email = document.getElementById('email');
+    var password = document.getElementById('pass');"*/
+      http.open("PATCH", url, true);
+    
+      http.onreadystatechange = function () {
+        if (http.readyState == 4 && http.status == 200) {
+          //aqui obtienes la respuesta de tu peticion
+        }
+      };
+      jsonElements = JSON.stringify({
+        active: false
+      })
+      http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      console.log(jsonElements);
+      http.send(jsonElements);
+    }
     const tarea3 = function(event)
     {
-      clickSender(event);   
+      clickSender(event, endSession);   
   event.preventDefault();
  
-  if(event.target.searchInput.value === "fin"){
+  if(event.target.searchInput.value.toLowerCase() === "fin"){
   $("#tareaFin").modal("show");
+  endSession();
   }
   
       }
