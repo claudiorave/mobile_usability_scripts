@@ -13,4 +13,4 @@
         //y se lo asigna a document body
         document.body.appendChild(dot);
       
-      }, Modernizr.passiveeventlisteners ? {passive: true} : false);
+      });

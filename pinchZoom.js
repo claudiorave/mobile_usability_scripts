@@ -185,7 +185,7 @@ return true;
 
  document.addEventListener('touchend', (event) => {
   setTimeout(removeStyleElementsInRadioPrevious, 3000);
-}, Modernizr.passiveeventlisteners ? {passive: true} : false);
+});
  
 
 

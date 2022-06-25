@@ -39,7 +39,7 @@ function elementosRadio() {
     //asignarle a los elemetos un style
     //addStyleElementsInRadio( htmlElements );
     writeDotItem();
-  }, Modernizr.passiveeventlisteners ? {passive: true} : false);
+  });
 }
 
 function removeDotItemPrevious() {
