@@ -17,6 +17,8 @@ const clickSender = (event, cFunction) => {
       elements:[{xpath: htmlElements}] ,
       timestamp:  new Date(),
       session: sessionStorage.token,
+      sitio: sessionStorage.sitio,
+      tarea:sessionStorage.tarea
     }),
     cFunction
   );
@@ -45,8 +47,15 @@ const clickReact = function(event)
   }
   const tarea2 = function()
   {   
+    sessionStorage.setItem("tarea", 2);
+
 $("#usabilidadSpan").click(tarea2Helper);
 
+    }
+    const tarea1 = ()=>{
+      sessionStorage.setItem("tarea", 1);
+      $('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact);
+  
     }
     const endSession= function(){
       var http = new XMLHttpRequest();
@@ -80,6 +89,7 @@ $("#usabilidadSpan").click(tarea2Helper);
       }
 
       const openTarea3 = function(){
+        sessionStorage.setItem("tarea", 3);
         $('#searchform').submit(function() {
           return tarea3(event);
       });

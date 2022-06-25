@@ -122,8 +122,7 @@ function elementsInPinch(zeroX, zeroY, oneX, oneY){
            htmlElements.push(elemento);
       }
   }
-  console.log(">> send pinchzoom event info");
-  makeRequest(JSON.stringify({timestamp: new Date().toJSON(), elements: htmlElements, type: 'pinchzoom', session: sessionStorage.token}));
+  makeRequest(JSON.stringify({timestamp: new Date().toJSON(), elements: htmlElements, type: 'pinchzoom', session: sessionStorage.token, tarea: sessionStorage.tarea, sitio: sessionStorage.sitio}));
 }
 
 function insidePinch(x1, x2, y1, y2, elemRect){
@@ -186,7 +185,7 @@ return true;
 
  document.addEventListener('touchend', (event) => {
   setTimeout(removeStyleElementsInRadioPrevious, 3000);
-});
+}, Modernizr.passiveeventlisteners ? {passive: true} : false);
  
 
 

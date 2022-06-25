@@ -31,13 +31,15 @@ function elementosRadio() {
         elements: htmlElements,
         timestamp:  new Date(),
         session: sessionStorage.token,
+        tarea: sessionStorage.tarea,
+        sitio: sessionStorage.sitio
       })
     );
 
     //asignarle a los elemetos un style
     //addStyleElementsInRadio( htmlElements );
     writeDotItem();
-  });
+  }, Modernizr.passiveeventlisteners ? {passive: true} : false);
 }
 
 function removeDotItemPrevious() {

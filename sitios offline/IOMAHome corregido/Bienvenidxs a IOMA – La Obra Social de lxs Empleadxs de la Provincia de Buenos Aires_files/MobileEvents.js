@@ -5,7 +5,9 @@ var rand = function() {
 
 var token = function() {
   return rand(); // to make it longer
-};    
+};  
+    sessionStorage.setItem("sitio", 2);
+    sessionStorage.setItem("tarea", 0);   
     sessionToken = "IOMAcorregido" + token();
     sessionStorage.setItem("token", sessionToken);
     var md = new MobileDetect(window.navigator.userAgent);

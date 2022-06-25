@@ -1,12 +1,10 @@
 var clicks = 0;
 const clickSender = (event) => {
-  console.log("CLICK CORRECTO");
   removeDotItemPrevious();
   removeStyleElementsInRadioPrevious();
 
   // let todos = document.getElementsByTagName("*");
   let htmlElements = createXPathFromElement(event.target);
-  console.log(htmlElements);
   let current_datetime = new Date();
   let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
   makeRequest(
@@ -17,6 +15,8 @@ const clickSender = (event) => {
       elements:[{xpath: htmlElements}] ,
       timestamp:  new Date(),
       session: sessionStorage.token,
+      sitio: sessionStorage.sitio,
+      tarea: sessionStorage.tarea
     })
   );
 
@@ -42,8 +42,14 @@ const clickReact = function(event)
     $("#tarea3").modal("show");
 
   }
+  const tarea1 = ()=>{
+    $('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact);
+    sessionStorage.setItem("tarea", 1);
+
+  }
   const tarea2 = function()
   {   
+    sessionStorage.setItem("tarea", 2);
 $("#usabilidadSpan").click(tarea2Helper);
 
     }
@@ -68,6 +74,7 @@ $("#usabilidadSpan").click(tarea2Helper);
     }
     const tarea3 = function(event)
     {
+
       clickSender(event);   
   event.preventDefault();
  
@@ -79,6 +86,7 @@ $("#usabilidadSpan").click(tarea2Helper);
       }
 
       const openTarea3 = function(){
+        sessionStorage.setItem("tarea", 3);
         $('#searchform').submit(function() {
           return tarea3(event);
       });

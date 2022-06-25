@@ -145,7 +145,7 @@
     //referencia al obj que se realizo el evento
     scrollEventInfo.setDomScrollObj( createXPathFromElement( domCurrentObj ) );
     //envio de info a Pharo server
-    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), elements:scrollEventInfo.domScrollObj, type:'scroll', session: sessionStorage.token}  ) );
+    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), elements:scrollEventInfo.domScrollObj, type:'scroll', session: sessionStorage.token, sitio: sessionStorage.sitio, tarea:sessionStorage.tarea}  ) );
     
     resetScrollDataInfo();
   }
@@ -156,42 +156,6 @@
     domCurrentObj = null;
   }
 
-  //>>>>>>>>>para enviar los datos a Pharo
-  
-/*   function logEventPharoScroll (jsonElements) {
-    var http = new XMLHttpRequest ();
-    var url = "http://localhost:1701/register";
-  
-    http.open("POST", url, true);
-  
-    http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) { 
-        //aqui obtienes la respuesta de tu peticion
-        //alert(http.responseText);
-        }
-    }
-   http.send(jsonElements);
-  }
- */
-  // function logEventPharoScroll(scrollEventInfo)
-  // { 
-  //   const data = scrollEventInfo;
-
-  //   fetch('http://localhost:1701/register', {
-  //     method: 'POST', // or 'PUT'
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(data),
-  //   })                        //change recive json - text
-  //    .then(response => response.json())
-  //    .then(data => {
-  //      console.log('Success:', data);
-  //    })
-  //    .catch((error) => {
-  //      console.error('Error:', error);
-  //    });
-  // }
 
   function createXPathFromElement(elm) { 
     var allNodes = document.getElementsByTagName('*'); 
