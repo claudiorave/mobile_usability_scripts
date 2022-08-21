@@ -1,0 +1,21 @@
+/* Add here all your CSS customizations */
+
+.titulogrupo{
+    margin-top:10px; 
+    margin-bottom:10px; 
+    color: #284666;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.subtitulogrupo{
+    margin-top:10px; 
+    margin-bottom:10px; 
+    color: #284666;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.grupoDiv{
+    display: inline-block;
+}

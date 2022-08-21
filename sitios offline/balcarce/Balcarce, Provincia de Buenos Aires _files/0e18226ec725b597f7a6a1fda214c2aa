@@ -1,0 +1,13 @@
+conte = document.getElementById("cont_0e18226ec725b597f7a6a1fda214c2aa");
+                        if (conte) {
+                            conte.style.cssText = "width: 141px; color: #868686; background-color:#FFFFFF; border:1px solid #ffffff; margin: 0 auto; font-family: Roboto;";
+                            elem = document.createElement("iframe");
+                            elem.style.cssText = "width:141px; color:#868686; height:85px;";
+                            elem.id = "0e18226ec725b597f7a6a1fda214c2aa";
+                            elem.src = "https://www.meteored.com.ar/getwid/0e18226ec725b597f7a6a1fda214c2aa";
+                            elem.frameBorder = 0;
+                            elem.allowTransparency = true;
+                            elem.scrolling = "no";
+                            elem.name = "flipe";
+                            conte.appendChild(elem);
+                        }
