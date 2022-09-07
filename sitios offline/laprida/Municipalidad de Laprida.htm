@@ -12,6 +12,11 @@
 		<meta name="description" content="Porto - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
 
+		<link
+		href="../../css/bootstrap.min.css"
+		rel="stylesheet"
+	  />
+
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="https://www.laprida.gov.ar/assets/img/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="https://www.laprida.gov.ar/assets/img/apple-touch-icon.png">
@@ -23,7 +28,7 @@
 		<link href="Municipalidad%20de%20Laprida_files/css.css" rel="stylesheet" type="text/css">
 
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="Municipalidad%20de%20Laprida_files/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="Municipalidad%20de%20Laprida_files/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="Municipalidad%20de%20Laprida_files/font-awesome.min.css">
 		<link rel="stylesheet" href="Municipalidad%20de%20Laprida_files/animate.min.css">
 		<link rel="stylesheet" href="Municipalidad%20de%20Laprida_files/simple-line-icons.min.css">
@@ -52,6 +57,7 @@
 		<!-- Head Libs -->
 		<script type="text/javascript" async="" src="Municipalidad%20de%20Laprida_files/analytics.js"></script><script src="Municipalidad%20de%20Laprida_files/modernizr.min.js"></script>
 		
+		<link rel="stylesheet" href="custom.css" media="all">
 
 
 	</head>
@@ -856,7 +862,53 @@ function show(id_padre, titulo){
 
 		  gtag('config', 'UA-74934652-1');
 		</script>
+		<div
+		class="modal fade"
+		id="myModal"
+		aria-hidden="true"
+		aria-labelledby="exampleModalToggleLabel"
+		tabindex="-1"
+	  >
+		<div class="modal-dialog modal-dialog-centered">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalToggleLabel">
+				Bienvenid@!
+			  </h5>
+			</div>
+			<div class="modal-body">
+			  A través de unas pruebas sencillas usted podrá ayudar a la detección
+			  de problemas de usabilidad. <br /><br />
+			  Presione el botón "Siguiente" para comenzar.
+			</div>
+			<div class="modal-footer">
+			  <button
+				class="btn btn-primary"
+				data-bs-target="#exampleModalToggle2"
+				data-bs-toggle="modal"
+				data-bs-dismiss="modal"
+			  >
+				Siguiente
+			  </button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+		<script
+		src="../../js/jquery-3.2.1.slim.min.js"
+		></script>
+		<script
+		src="../../js/popper.min.js"
+		></script>
+		<script
+		src="../../js/bootstrap.min.js"
+		></script>
 		
+		<script type="text/javascript">
+		$(window).on("load", function () {
+		  $("#myModal").modal("show");
+		});
+		</script>
 	
 
 </body></html>
