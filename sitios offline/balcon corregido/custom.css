@@ -25,16 +25,34 @@
 
 #hamburger{
   position: absolute !important;
-  right: 145px !important;
+  right: 14px !important;
+  
 }
 
+#searchy{
+  position: absolute !important;
+  right: 50px !important;
+}
 
+#accounty{
+  position: absolute !important;
+  right: 135px !important;
+}
 
+#carty{
+  position: absolute !important;
+  right: 90px !important;
+}
 
 #Plogo{
   position: absolute !important;
   z-index: 0 !important;
 }
+
+#main-header--mobile-nav{
+  top: 50px !important;
+}
+
 
 .ham {
   width: 35px;
