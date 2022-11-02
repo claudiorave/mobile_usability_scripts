@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html class="js" data-restockalerts-status="loaded"><head>
+  <script defer src="https://friconix.com/cdn/friconix.js"> </script>
+
 <link
 	href="../../css/bootstrap.min.css"
 	rel="stylesheet"
@@ -8,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width">
   <title>
-    Somos Balcón, Somos Plantennials
+    Somos Balcón, Somos Plantennials 
 
     
 
@@ -662,7 +664,11 @@ for (var attr in meta) {
 <body class="
     template-index
     product-grid-taller
-  "><div class="privy-pusher privy-pusher-top"></div><div></div>
+  ">
+  <form action="/search" method="get" id="search-form3" onsubmit="buscador()">
+    <input class="search-input" id="searchInput" name="q" type="text" placeholder="Buscar" >
+  </form>
+  <div class="privy-pusher privy-pusher-top"></div><div></div>
   <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -2390,18 +2396,11 @@ for (var attr in meta) {
           </div>
         </div>
       </a>
-    </li><li class="nav-item last search" id="searchy">
+    </li><li class="nav-item last search" id="searchy" onclick="openSearch()">
       <div><span class="icon">s</span></div>
-    </li><li class="search-outer-wrap" id="search-form">
-      <div class="search-wrap" id="search-form2">
-        <form action="/search" method="get" id="search-form3">
-          <input class="search-input" name="q" type="text" placeholder="Buscar">
-          <span class="icon">s</span>
-        </form>
-      </div>
     </li>
   </ul>
-
+ 
   <section class="mobile-dropdown" id="main-header--mobile-nav">
 
   
@@ -4057,15 +4056,15 @@ plástico ni sus derivados. Ni hoy, ni nunca.</p><p></p><p></p>
       <li class="first newsletter">
         
           
-            <h2 class="title">PLANTLETTER</h2>
+            <h2 class="title">PLANTLETTER <i class="fa-regular fa-magnifying-glass"></i></h2>
           
           <div class="footer-message"><p> Uno cosecha lo que planta</p></div>
         
-        <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
-          <div class="wrap">
-            <input class="email" name="contact[email]" type="email" placeholder="Tu email">
+        <form  onsubmit="checkMail()"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+          <div class="wrap" id="wrap-form">
+            <input class="email" name="contact[email]" id="suscribeMail" type="email" placeholder="Tu email">
             <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter">
-            <input class="submit" name="subscribe" type="submit" value="suscribirme">
+            <input class="submit" name="subscribe" id="suscribirmeSubmit" type="submit" placeholder= "SUSCRIBIRME"value="suscribirme">
           </div>
         </form>
         
@@ -4396,10 +4395,8 @@ jQuery(function() {
           <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
         </div>
         <div class="modal-body">
-          Encuentre el botón: <br> 
-          <div class="ham"></div><div class="ham"></div><div class="ham"></div>
-        <br>
-
+          Encuentre el botón  <i class="fi-xnsuxl-three-bars-solid"></i>
+<br>
         Presione sobre el mismo y a continuación seleccione "ENVÍO EN 24HS"
         </div>
         <div class="modal-footer">
@@ -4436,7 +4433,8 @@ jQuery(function() {
           <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
         </div>
         <div class="modal-body">
-         Intente cerrar los carteles...
+         Presione sobre el icono <i class="fi-xnsuhl-search"></i> y a continuación ingrese "plantas" en la barra de búsqueda
+
         </div>
         <div class="modal-footer">
           <button
@@ -4451,7 +4449,7 @@ jQuery(function() {
             type="button"
             class="btn btn-primary"
             data-bs-dismiss="modal"
-            onclick="tarea1()"
+            onclick="closeMenu()"
           >
             Comenzar
           </button>
@@ -4459,6 +4457,117 @@ jQuery(function() {
       </div>
     </div>
   </div>
+  <div
+  class="modal fade"
+  id="tarea3"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 3</h5>
+      </div>
+      <div class="modal-body">
+Encuentre el formulario para suscribirse al "PLANTLETTER"
+<br>
+A continuación ingrese un mail y presione "SUSCRIBIRME"
+</div>
+      <div class="modal-footer">
+        <button
+          class="btn btn-secondary"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal"
+        >
+          Volver
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          onclick="closeSearch()"
+        >
+          Comenzar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+class="modal fade"
+id="tarea2"
+aria-hidden="true"
+aria-labelledby="exampleModalToggleLabel2"
+tabindex="-1"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
+    </div>
+    <div class="modal-body">
+     Presione sobre el icono <i class="fi-xnsuhl-search"></i> y a continuación ingrese "plantas" en la barra de búsqueda
+
+    </div>
+    <div class="modal-footer">
+      <button
+        class="btn btn-secondary"
+        data-bs-target="#myModal"
+        data-bs-toggle="modal"
+        data-bs-dismiss="modal"
+      >
+        Volver
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-dismiss="modal"
+        onclick="closeMenu()"
+      >
+        Comenzar
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<div
+class="modal fade"
+id="tarea4"
+aria-hidden="true"
+aria-labelledby="exampleModalToggleLabel2"
+tabindex="-1"
+>
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 4</h5>
+  </div>
+  <div class="modal-body">
+Seleccione la planta de menor precio
+</div>
+  <div class="modal-footer">
+    <button
+      class="btn btn-secondary"
+      data-bs-target="#myModal"
+      data-bs-toggle="modal"
+      data-bs-dismiss="modal"
+    >
+      Volver
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-dismiss="modal"
+      onclick="closeSearch()"
+    >
+      Comenzar
+    </button>
+  </div>
+</div>
+</div>
+</div>
   <script
   src="./custom.js"
   ></script>

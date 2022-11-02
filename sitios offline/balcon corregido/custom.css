@@ -53,10 +53,62 @@
   top: 50px !important;
 }
 
+#search-form3{
+  position: absolute !important;
+  top: 140px !important;
+  z-index: 21474836 !important; 
+  background-color: white !important;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100% !important;
+  text-align: center;
+  display: none;
 
+}
+#searchInput{
+  width: 90% !important;
+}
+#suscribirmeSubmit{
+  background-color: green;
+  color: white !important; 
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  border-color: black !important;
+  border-width: medium !important;
+
+}
+
+#suscribeMail{
+  border-color: black !important;
+  border-width: medium !important;
+  color: white !important; 
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+#suscribeMail::placeholder{
+  color: grey !important; 
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+#searchInput::placeholder{
+  font-size: 20px !important;
+  color: #B2AEAD;
+}
+
+#wrap-form{
+  border-color: red !important;
+}
 .ham {
   width: 35px;
   height: 5px;
   background-color: black;
   margin: 6px 0;
+}
+.title, .footer-message{
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  color: black !important;
 }
