@@ -1778,7 +1778,7 @@ for (var attr in meta) {
       </a>
 
       <div class="search-wrap" style="display: none;">
-  <form action="/search" method="get">
+  <form action="/search" method="get" >
     <input class="search-input" name="q" type="text" placeholder="Buscar">
     
 
@@ -2402,8 +2402,8 @@ for (var attr in meta) {
       <div><span class="icon">s</span></div>
     </li><li class="search-outer-wrap">
       <div class="search-wrap">
-        <form action="/search" method="get">
-          <input class="search-input" name="q" type="text" placeholder="Buscar">
+        <form action="/search" method="get" id="tareaSearch">
+          <input class="search-input" name="searchInput" type="text" placeholder="Buscar">
           <span class="icon">s</span>
         </form>
       </div>
@@ -2756,7 +2756,7 @@ for (var attr in meta) {
           
         "
         onclick="tarea2()">
-        <a href="#">
+        <a id="tareaMenu" href="#">
           Envío en 24 hs
           
         </a>
@@ -3263,7 +3263,7 @@ for (var attr in meta) {
           
             
 
-<li class="product product-6708215021637   ">
+<li class="product product-6708215021637 menorPrecio  ">
 
   
 
@@ -3293,7 +3293,7 @@ for (var attr in meta) {
 
       
 
-      <a href="https://balcon.com.ar/products/planta-sansevieria-enana-en-maceta-de-ceramica-mies-chica" class=""></a>
+      <a href="https://balcon.com.ar/products/planta-sansevieria-enana-en-maceta-de-ceramica-mies-chica" class="menorPrecio"></a>
 
       
         <a class="centering-wrapper overlay" href="https://balcon.com.ar/products/planta-sansevieria-enana-en-maceta-de-ceramica-mies-chica">
@@ -3325,11 +3325,11 @@ for (var attr in meta) {
 	
     <div class="product-card-details">
       
-      <h2 class="title"><a href="https://balcon.com.ar/products/planta-sansevieria-enana-en-maceta-de-ceramica-mies-chica">Planta Sansevieria enana en maceta de cerámica Mies chica</a></h2>
+      <h2 class="title"><a href="https://balcon.com.ar/products/planta-sansevieria-enana-en-maceta-de-ceramica-mies-chica" class="menorPrecio">Planta Sansevieria enana en maceta de cerámica Mies chica</a></h2>
 
       
         
-          <p class="price"><span class="money" data-currency-ars="$7.490,00">$7.490,00</span></p>
+          <p class="price menorPrecio"><span class="money menorPrecio" data-currency-ars="$7.490,00">$7.000,00</span></p>
         
       
     </div>
@@ -4069,9 +4069,9 @@ plástico ni sus derivados. Ni hoy, ni nunca.</p><p></p><p></p>
           
           <div class="footer-message"><p> Uno cosecha lo que planta</p></div>
         
-        <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+        <form id="formMail"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
           <div class="wrap">
-            <input class="email" name="contact[email]" type="email" placeholder="Tu email">
+            <input class="email" name="contactEmail" type="email" placeholder="Tu email">
             <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter">
             <input class="submit" name="subscribe" type="submit" value="suscribirme">
           </div>
@@ -4361,37 +4361,66 @@ jQuery(function() {
     <canvas id="privy-confetti-canvas"></canvas></div></div></div><div id="privy-recaptcha" style="display: none; z-index: 100000000; position: relative;"><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="Somos%20Balc%C3%B3n,%20Somos%20Plantennials%20%E2%80%93%20Balc%C3%B3n%20Plantas_files/anchor.htm" role="presentation" name="a-yhl9yz817p6g" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><div id="wa-chat-btn-root" class="wa-chat-btn-fixed wa-splmn-chat-btn-offset wa-custom-chat-btn wa-chat-btn-base-icon" style="background: rgb(96, 187, 109) none repeat scroll 0% 0%;"><div class="wa-chat-btn-icon-image-only wa-custom-icon" style="background: #ffffff; -webkit-mask-image: url(https://cdn.shopify.com/s/files/1/0265/2572/8803/files/wa-icon.svg?v=1586940530); -webkit-mask-size: cover; -webkit-mask-position: center;"></div><span></span></div><div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div><div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"><iframe title="El reCAPTCHA caduca dentro de dos minutos" src="Somos%20Balc%C3%B3n,%20Somos%20Plantennials%20%E2%80%93%20Balc%C3%B3n%20Plantas_files/bframe.htm" style="width: 100%; height: 100%;" name="c-yhl9yz817p6g" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div>
     <div
     class="modal fade circuito"
-    id="myModal"
+    id="tareaFin"
     aria-hidden="true"
     aria-labelledby="exampleModalToggleLabel"
     tabindex="-1"
-    >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+  >
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalToggleLabel">
-        Bienvenid@!
+          Fin
         </h5>
       </div>
       <div class="modal-body">
-        A través de unas pruebas sencillas usted podrá ayudar a la detección
-        de problemas de usabilidad. <br /><br />
-        Presione el botón "Siguiente" para comenzar.
+        Gracias por participar
       </div>
       <div class="modal-footer">
         <button
-        class="btn btn-primary"
-        data-bs-target="#exampleModalToggle2"
-        data-bs-toggle="modal"
-        data-bs-dismiss="modal"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal"
         >
-        Siguiente
+          Siguiente
         </button>
       </div>
+    </div>
+  </div>
+</div>
+ <div
+    class="modal fade circuito"
+    id="myModal"
+    aria-hidden="true"
+    a ria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">
+            Bienvenid@!
+          </h5>
+        </div>
+        <div class="modal-body">
+          A través de unas pruebas sencillas usted podrá ayudar a la detección
+          de problemas de usabilidad. <br /><br />
+          Presione el botón "Siguiente" para comenzar.
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle2"
+            data-bs-toggle="modal"
+            data-bs-dismiss="modal"
+          >
+            Siguiente
+          </button>
+        </div>
       </div>
     </div>
-    </div>
-    <div
+  </div>
+  <div
     class="modal fade"
     id="exampleModalToggle2"
     aria-hidden="true"
@@ -4404,11 +4433,9 @@ jQuery(function() {
           <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
         </div>
         <div class="modal-body">
-          Encuentre el botón: <br> 
-          <div class="ham"></div><div class="ham"></div><div class="ham"></div>
-        <br>
+          Encuentre el botón para abrir el menú <br>
 
-        Presione sobre el mismo y a continuación seleccione "ENVÍO EN 24HS"
+          Presione sobre el mismo y a continuación seleccione "ENVÍO EN 24HS"
         </div>
         <div class="modal-footer">
           <button
@@ -4444,7 +4471,38 @@ jQuery(function() {
           <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
         </div>
         <div class="modal-body">
-         Intente cerrar los carteles...
+          Presione sobre el icono de buscar y a
+          continuación ingrese "plantas" en la barra de búsqueda
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            onclick="openTarea2()"
+          >
+            Comenzar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="tarea3"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 3</h5>
+        </div>
+        <div class="modal-body">
+          Encuentre el formulario para suscribirse al "PLANTLETTER"
+          <br />
+          A continuación ingrese un mail y presione "SUSCRIBIRME"
         </div>
         <div class="modal-footer">
           <button
@@ -4459,7 +4517,62 @@ jQuery(function() {
             type="button"
             class="btn btn-primary"
             data-bs-dismiss="modal"
-            onclick="tarea1()"
+            onclick="openTarea3()"
+          >
+            Comenzar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="tarea2"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
+        </div>
+        <div class="modal-body">
+          Presione sobre el icono de búsqueda y a
+          continuación ingrese "plantas" en la barra de búsqueda
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            onclick="closeMenu()"
+          >
+            Comenzar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="tarea4"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 4</h5>
+        </div>
+        <div class="modal-body">Seleccione la planta de menor precio</div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            onclick="openTarea4()"
           >
             Comenzar
           </button>
