@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="es"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+	<link
+	href="../../css/bootstrap.min.css"
+	rel="stylesheet"
+  />
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
 		<title>Kabytes</title>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		   <link
-      href="../../css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+		
 	<!-- CSS only -->
 
 		<link rel="apple-touch-icon" sizes="57x57" href="https://www.kabytes.com/wp-content/themes/yeager/favicon/apple-icon-57x57.png">
@@ -77,7 +82,7 @@ img.emoji {
 .mashsb-count {color:#cccccc;}@media only screen and (min-width:568px){.mashsb-buttons a {min-width: 177px;}}
 </style>
 <link rel="stylesheet" id="googlefonts-css" href="Kabytes_files/css.css" media="all">
-<!-- <link rel="stylesheet" id="bootstrap-css" href="Kabytes_files/bootstrap.min.css" media="all"> -->
+<!-- <link rel="stylesheet" id="bootstrap-css" href="Kabytes_files/bootstrap.min.css" media="all">  -->
 <link rel="stylesheet" id="normalize-css" href="Kabytes_files/normalize.css" media="all">
 <link rel="stylesheet" id="html5blank-css" href="Kabytes_files/style.css" media="all">
 <link rel="stylesheet" id="mmenu-css" href="Kabytes_files/jquery.mmenu.all.css" media="all">
@@ -195,11 +200,11 @@ var mashsb = {"shares":"16","round_shares":"1","animate_shares":"0","dynamic_but
 	  <nav id="main-nav" class="fixed nav-down" role="navigation">
 	    <div class="container">
 	      <a class="logo pull-left" href="https://www.kabytes.com/">KABYTES</a>
-	      <ul id="nav-actions" class="row pull-right list-inline">
-	      	<li><a href="https://www.facebook.com/Kabytes-55332019087/?fref=ts" title="Kabytes en Facebook" target="_blank"><i class="top-icon top-facebook"></i></a></li>
-	      	<li><a href="https://twitter.com/Kabytes" title="Kabytes en Twitter" target="_blank"><i class="top-icon top-twitter"></i></a></li>
-	      	<li><a href="https://feeds.feedburner.com/kabytes" title="Feed Kabytes" target="_blank"><i class="top-icon top-rss"></i></a></li>
-	        <li><i id="search-btn" class="fa fa-search"></i></li>
+	      <ul id="nav-actions" class="navItems">
+	      	<li class="marginLeft"><a href="https://www.facebook.com/Kabytes-55332019087/?fref=ts" title="Kabytes en Facebook" target="_blank"><i class="fi-cnsuxl-facebook" style="color: black;"></i></a></li>
+	      	<li class="marginLeft"><a href="https://twitter.com/Kabytes" title="Kabytes en Twitter" target="_blank"><i class="fi-cnsuxl-twitter-solid" style="color: black;"></i></a></li>
+	      	<li class="marginLeft"><a href="https://feeds.feedburner.com/kabytes" title="Feed Kabytes" target="_blank"><i class="fi-cnsuxl-rss" style="color: black;"></i></a></li>
+	        <li class="marginLeft" onclick="openSearchDiv()"><i class="fi-xnsuhl-search" style="color: black;"></i></li>
 	      </ul>
 	    </div>
 	  </nav>
@@ -663,7 +668,7 @@ serie de dispositivos electrónicos elaborados en CSS....</p>
   </div>
 </footer>
 
-<div class="search-hide-form">
+<div id="buscador" class="search-hide-form">
   <form role="search" class="form-horizontal" method="get" id="searchform" action="https://www.kabytes.com/">
     <h3>Buscar en Kabytes</h3>
     <div class="form-group row">
@@ -697,54 +702,238 @@ pageTracker._trackPageview();
 
 
 
-<div id="mm-blocker" class="mm-slideout"></div><div class="open-menu fixed mm-slideout"><a href="#menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a></div><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: medium none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/ads.htm" data-google-container-id="a!3" data-load-complete="true" frameborder="0"></iframe></div></ins><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: block; width: 100% !important; height: 95px !important; bottom: 0px; clear: none !important; float: none !important; left: 0px; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1; overflow: visible !important; padding: 0px !important; position: fixed; right: auto !important; top: auto !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647; background: rgb(250, 250, 250) none repeat scroll 0% 0% !important;" data-anchor-status="displayed" data-ad-status="filled" data-anchor-shown="true"><div class="grippy-host"></div><div id="aswift_4_host" style="border: medium none !important; height: 90px !important; width: 100% !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_4" name="aswift_4" style="width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/zrt_lookup.htm" data-google-container-id="a!5" data-google-query-id="CPie84Cd1vkCFUwwuQYdzMEHvQ" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></div></ins><iframe src="Kabytes_files/aframe.htm" style="display: none;" width="0" height="0"></iframe>
-
+<div id="mm-blocker" class="mm-slideout"></div><div class="open-menu fixed mm-slideout"><a href="#menu" onclick="openMenu()"><span style="z-index: 999999;"class="glyphicon glyphicon-menu-hamburger"><i class="fi-xnsuxl-three-bars-solid"></i></span></a></div><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: medium none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/ads.htm" data-google-container-id="a!3" data-load-complete="true" frameborder="0"></iframe></div></ins><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: block; width: 100% !important; height: 95px !important; bottom: 0px; clear: none !important; float: none !important; left: 0px; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1; overflow: visible !important; padding: 0px !important; position: fixed; right: auto !important; top: auto !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647; background: rgb(250, 250, 250) none repeat scroll 0% 0% !important;" data-anchor-status="displayed" data-ad-status="filled" data-anchor-shown="true"><div class="grippy-host"></div><div id="aswift_4_host" style="border: medium none !important; height: 90px !important; width: 100% !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_4" name="aswift_4" style="width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/zrt_lookup.htm" data-google-container-id="a!5" data-google-query-id="CPie84Cd1vkCFUwwuQYdzMEHvQ" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></div></ins><iframe src="Kabytes_files/aframe.htm" style="display: none;" width="0" height="0"></iframe>
 <div
-	class="modal fade"
-	id="myModal"
-	aria-hidden="true"
-	aria-labelledby="exampleModalToggleLabel"
-	tabindex="-1"
-  >
-	<div class="modal-dialog modal-dialog-centered">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalToggleLabel">
-			Bienvenid@!
-		  </h5>
-		</div>
-		<div class="modal-body">
-		  A través de unas pruebas sencillas usted podrá ayudar a la detección
-		  de problemas de usabilidad. <br /><br />
-		  Presione el botón "Siguiente" para comenzar.
-		</div>
-		<div class="modal-footer">
-		  <button
-			class="btn btn-primary"
-			data-bs-target="#exampleModalToggle2"
-			data-bs-toggle="modal"
-			data-bs-dismiss="modal"
-		  >
-			Siguiente
-		  </button>
-		</div>
+class="modal fade circuito"
+id="tareaFin"
+aria-hidden="true"
+aria-labelledby="exampleModalToggleLabel"
+tabindex="-1"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <h5 class="modal-title" id="exampleModalToggleLabel">
+		Fin
+	  </h5>
+	</div>
+	<div class="modal-body">
+	  Gracias por participar
+	</div>
+	<div class="modal-footer">
+	  <button
+		class="btn btn-primary"
+		data-bs-toggle="modal"
+		data-bs-dismiss="modal"
+	  >
+		Siguiente
+	  </button>
+	</div>
+  </div>
+</div>
+</div>
+<div
+  class="modal fade circuito"
+  id="myModal"
+  aria-hidden="true"
+  a ria-labelledby="exampleModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel">
+		  Bienvenid@!
+		</h5>
+	  </div>
+	  <div class="modal-body">
+		A través de unas pruebas sencillas usted podrá ayudar a la detección
+		de problemas de usabilidad. <br /><br />
+		Presione el botón "Siguiente" para comenzar.
+	  </div>
+	  <div class="modal-footer">
+		<button
+		  class="btn btn-primary"
+		  data-bs-target="#exampleModalToggle2"
+		  data-bs-toggle="modal"
+		  data-bs-dismiss="modal"
+		>
+		  Siguiente
+		</button>
 	  </div>
 	</div>
   </div>
-<script
-src="../../js/jquery-3.2.1.slim.min.js"
-></script>
-<script
-src="../../js/popper.min.js"
-></script>
-<script
-src="../../js/bootstrap.min.js"
-></script>
+</div>
+<div
+  class="modal fade"
+  id="exampleModalToggle2"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
+	  </div>
+	  <div class="modal-body">
+		Encuentre el botón para abrir el menú <br>
 
+		Presione sobre el mismo y a continuación seleccione "ENVÍO EN 24HS"
+	  </div>
+	  <div class="modal-footer">
+		<button
+		  class="btn btn-secondary"
+		  data-bs-target="#myModal"
+		  data-bs-toggle="modal"
+		  data-bs-dismiss="modal"
+		>
+		  Volver
+		</button>
+		<button
+		  type="button"
+		  class="btn btn-primary"
+		  data-bs-dismiss="modal"
+		  onclick="tarea1()"
+		>
+		  Comenzar
+		</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="tarea2"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
+	  </div>
+	  <div class="modal-body">
+		Presione sobre el icono de buscar y a
+		continuación ingrese "plantas" en la barra de búsqueda
+	  </div>
+	  <div class="modal-footer">
+		<button
+		  type="button"
+		  class="btn btn-primary"
+		  data-bs-dismiss="modal"
+		  onclick="openTarea2()"
+		>
+		  Comenzar
+		</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="tarea3"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 3</h5>
+	  </div>
+	  <div class="modal-body">
+		Encuentre el formulario para suscribirse al "PLANTLETTER"
+		<br />
+		A continuación ingrese un mail y presione "SUSCRIBIRME"
+	  </div>
+	  <div class="modal-footer">
+		<button
+		  class="btn btn-secondary"
+		  data-bs-target="#myModal"
+		  data-bs-toggle="modal"
+		  data-bs-dismiss="modal"
+		>
+		  Volver
+		</button>
+		<button
+		  type="button"
+		  class="btn btn-primary"
+		  data-bs-dismiss="modal"
+		  onclick="openTarea3()"
+		>
+		  Comenzar
+		</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="tarea2"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
+	  </div>
+	  <div class="modal-body">
+		Presione sobre el icono de búsqueda y a
+		continuación ingrese "plantas" en la barra de búsqueda
+	  </div>
+	  <div class="modal-footer">
+		<button
+		  type="button"
+		  class="btn btn-primary"
+		  data-bs-dismiss="modal"
+		  onclick="closeMenu()"
+		>
+		  Comenzar
+		</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="tarea4"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 4</h5>
+	  </div>
+	  <div class="modal-body">Seleccione la planta de menor precio</div>
+	  <div class="modal-footer">
+		<button
+		  type="button"
+		  class="btn btn-primary"
+		  data-bs-dismiss="modal"
+		  onclick="openTarea4()"
+		>
+		  Comenzar
+		</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<script src="./custom.js"></script>
+<script src="../../js/jquery-3.2.1.slim.min.js"></script>
+<script src="../../js/popper.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script type="text/javascript">
-$(window).on("load", function () {
-  $("#myModal").modal("show");
-});
+  $(window).on("load", function () {
+	$("#myModal").modal("show");
+  });
 </script>
 
 
