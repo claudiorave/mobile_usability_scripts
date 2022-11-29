@@ -129,10 +129,10 @@ color: black !important;
 }
 
 #nav-actions{
-  display: flex;
-  justify-content: flex-end;
+
 }
 
 .marginLeft{
   margin: 8px;
+  float: right;
 }
