@@ -3,7 +3,7 @@ $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return fa
 const openTarea2 = ()=>{
     sessionStorage.setItem("tarea", 3);
     closeMenu();
-        $('#tareaSearch').submit(buscador);
+    $("#tarea2").modal("show");
     } 
 const openTarea3 = ()=>{
     closeSearch();
@@ -23,7 +23,7 @@ const tarea2 = ()=>{
     $("#tarea2").modal("show");
 }
 const tarea1 = ()=>{
-    $("#tareaMenu").click(tarea2);
+    $("#menuTutorial").click(openTarea2);
 }
 
 const tareaFin = ()=>{
@@ -51,7 +51,7 @@ const checkMail = ()=>{
 }
 
 const closeMenu = ()=>{
-$("#main-header--mobile-nav").css("display", "none");
+$("#menu").removeClass("mm-current mm-opened");
 }
 
 const closeSearch = ()=>{
