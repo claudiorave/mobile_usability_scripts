@@ -130,10 +130,10 @@ color: black !important;
   float:left;
 }
 
-#nav-actions{
+/* #nav-actions{
 position: absolute;
 right: 50px;
-}
+} */
 
 .marginLeft{
   margin: 8px;
@@ -143,5 +143,9 @@ right: 50px;
 html, body {
   margin: 0 !important;
   padding: 0 !important;
+  max-width: 100% !important;
+}
+
+#main-nav, #main-nav-container{
   max-width: 100% !important;
 }
