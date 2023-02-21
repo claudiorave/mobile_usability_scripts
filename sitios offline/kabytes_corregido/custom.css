@@ -1,0 +1,151 @@
+.modal {
+  /* padding: 0 !important; */
+  z-index: 2147483647 !important; 
+}
+.modal .modal-dialog {
+  /* width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important; */
+}
+.modal .modal-content {
+  /* height: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important; */
+}
+.modal .modal-body {
+  /* overflow-y: auto !important; */
+}
+.modal-backdrop
+{
+  opacity:0.7 !important;
+  z-index: 2147483646 !important; 
+  position: fixed !important;
+}
+html{
+  max-width: 100%;
+}
+#hamburger{
+position: absolute !important;
+right: 14px !important;
+
+}
+
+#searchy{
+position: absolute !important;
+right: 50px !important;
+}
+
+#hambIcon{
+position: absolute !important;
+left: px !important;
+}
+
+#accounty{
+position: absolute !important;
+right: 135px !important;
+}
+
+#carty{
+position: absolute !important;
+right: 90px !important;
+}
+
+#Plogo{
+position: absolute !important;
+z-index: 0 !important;
+}
+
+#main-header--mobile-nav{
+top: 50px !important;
+}
+
+#tareaSearch{
+position: absolute !important;
+top: 140px !important;
+z-index: 21474836 !important; 
+background-color: white !important;
+border: 2px solid black;
+padding: 10px;
+border-radius: 10px;
+width: 100% !important;
+text-align: center;
+display: none;
+
+}
+#searchInput{
+width: 90% !important;
+}
+#suscribirmeSubmit{
+margin-top: 10px !important;
+background-color: green;
+color: white !important; 
+font-size: 16px !important;
+font-weight: 500 !important;
+border-color: black !important;
+border-width: medium !important;
+
+}
+
+#suscribeMail{
+border-color: black !important;
+border-width: medium !important;
+color: white !important; 
+font-size: 16px !important;
+font-weight: 500 !important;
+text-align: left !important;
+}
+
+#suscribeMail::placeholder{
+color: grey !important; 
+font-size: 16px !important;
+font-weight: 500 !important;
+}
+
+#searchInput::placeholder{
+font-size: 20px !important;
+color: #B2AEAD;
+}
+
+#wrap-form{
+border-color: red !important;
+}
+.ham {
+width: 35px;
+height: 5px;
+background-color: black;
+margin: 6px 0;
+}
+.title, .footer-message, .money{
+font-weight: 400 !important;
+font-size: 20px !important;
+color: black !important;
+}
+
+#menu{
+  z-index: 9999;
+}
+
+.left{
+  float:left;
+}
+
+/* #nav-actions{
+position: absolute;
+right: 50px;
+} */
+
+.marginLeft{
+  margin: 8px;
+  float: right;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+#main-nav, #main-nav-container{
+  max-width: 100% !important;
+}

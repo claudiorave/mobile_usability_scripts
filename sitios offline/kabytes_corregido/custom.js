@@ -1,5 +1,6 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
 
+
 const openTarea2 = ()=>{
     sessionStorage.setItem("tarea", 3);
     closeMenu();
@@ -9,10 +10,6 @@ const openTarea3 = ()=>{
     closeSearch();
     $('#formMail').submit(checkMail);
 
-}
-
-const startTarea2 = () =>{
-    $('#searchform').submit(buscador);
 }
 
 const openTarea4 = ()=>{
@@ -40,7 +37,7 @@ const tareaFin = ()=>{
 
 const buscador = ()=>{
     event.preventDefault();
-    if(event.target.searchInput.value.toLowerCase() === "usuario"){
+    if(event.target.searchInput.value.toLowerCase() === "plantas"){
         $("#tarea3").modal("show");
         endSession();}
 }
