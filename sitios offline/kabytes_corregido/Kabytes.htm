@@ -669,11 +669,11 @@ serie de dispositivos electrónicos elaborados en CSS....</p>
 </footer>
 
 <div id="buscador" class="search-hide-form">
-  <form role="search" class="form-horizontal" method="get" id="searchform" action="https://www.kabytes.com/">
+  <form role="search" class="form-horizontal" method="get" id="searchform" name="searchform" action="https://www.kabytes.com/">
     <h3>Buscar en Kabytes</h3>
     <div class="form-group row">
       <div class="col-md-10">
-        <input name="s" id="s" class="search" type="text" placeholder="¿Qué estás buscando?">
+        <input name="s" id="searchInput" class="search" type="text" placeholder="¿Qué estás buscando?">
       </div>
       <div class="col-md-2">
         <button type="submit" class="btn-search btn btn-default">Buscar</button>
@@ -822,14 +822,14 @@ tabindex="-1"
 	  </div>
 	  <div class="modal-body">
 		Presione sobre el icono de buscar y a
-		continuación ingrese "plantas" en la barra de búsqueda
+		continuación ingrese "usuario" en la barra de búsqueda
 	  </div>
 	  <div class="modal-footer">
 		<button
 		  type="button"
 		  class="btn btn-primary"
 		  data-bs-dismiss="modal"
-		  onclick="openTarea2()"
+		  onclick="startTarea2()"
 		>
 		  Comenzar
 		</button>
@@ -850,19 +850,9 @@ tabindex="-1"
 		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 3</h5>
 	  </div>
 	  <div class="modal-body">
-		Encuentre el formulario para suscribirse al "PLANTLETTER"
-		<br />
-		A continuación ingrese un mail y presione "SUSCRIBIRME"
+		Presione sobre el botón "LEER MÁS" de 3 artículos distintos
 	  </div>
 	  <div class="modal-footer">
-		<button
-		  class="btn btn-secondary"
-		  data-bs-target="#myModal"
-		  data-bs-toggle="modal"
-		  data-bs-dismiss="modal"
-		>
-		  Volver
-		</button>
 		<button
 		  type="button"
 		  class="btn btn-primary"
@@ -914,9 +904,9 @@ tabindex="-1"
   <div class="modal-dialog modal-dialog-centered">
 	<div class="modal-content">
 	  <div class="modal-header">
-		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 4</h5>
+		<h5 class="modal-title" id="exampleModalToggleLabel2">Fin</h5>
 	  </div>
-	  <div class="modal-body">Seleccione la planta de menor precio</div>
+	  <div class="modal-body">Gracias por participar</div>
 	  <div class="modal-footer">
 		<button
 		  type="button"

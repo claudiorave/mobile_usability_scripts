@@ -1,5 +1,13 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+var leerMas = 0;
 
+const leerMasPlus = () =>{
+    leerMas++;
+    $(event.target).unbind("click");
+    if (leerMas > 2){
+        $("#tarea4").modal("show");
+    } 
+}
 const openTarea2 = ()=>{
     sessionStorage.setItem("tarea", 3);
     closeMenu();
@@ -7,7 +15,7 @@ const openTarea2 = ()=>{
     } 
 const openTarea3 = ()=>{
     closeSearch();
-    $('#formMail').submit(checkMail);
+    $(".read-more").click(leerMasPlus);
 
 }
 
@@ -42,7 +50,7 @@ const buscador = ()=>{
     event.preventDefault();
     if(event.target.searchInput.value.toLowerCase() === "usuario"){
         $("#tarea3").modal("show");
-        endSession();}
+}
 }
 const checkMail = ()=>{
     event.preventDefault();
