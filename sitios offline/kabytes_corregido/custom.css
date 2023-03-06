@@ -149,3 +149,21 @@ html, body {
 #main-nav, #main-nav-container{
   max-width: 100% !important;
 }
+#buscador input{
+  width: 50% !important;
+  margin: auto !important;
+  border: solid black;
+ border-width: 2px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red !important;
+  opacity: 1; /* Firefox */
+}
+
+/* .read-more{
+  background-color: black;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+} */

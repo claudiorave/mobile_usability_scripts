@@ -1,4 +1,7 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+const disable = function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; };
+$('#searchform').bind('click', disable);
+
 var leerMas = 0;
 
 const leerMasPlus = () =>{
@@ -20,6 +23,7 @@ const openTarea3 = ()=>{
 }
 
 const startTarea2 = () =>{
+    $('#searchform').unbind();
     $('#searchform').submit(buscador);
 }
 

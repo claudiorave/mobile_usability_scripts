@@ -1,4 +1,6 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+$('#submmit-button').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+
 var leerMas = 0;
 
 const leerMasPlus = () =>{
