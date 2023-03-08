@@ -160,7 +160,19 @@ html, body {
   color: red !important;
   opacity: 1; /* Firefox */
 }
+/* .cat-item{
+  border: solid black !important;
+  color: red !important;
+} */
+.cat-item {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.843);
+  font-weight: bold;
 
+  text-decoration: none;
+  display: block;
+  border:black !important;
+}
 /* .read-more{
   background-color: black;
   color: white;

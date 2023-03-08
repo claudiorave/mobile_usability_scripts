@@ -1,6 +1,5 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
 const disable = function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; };
-$('#searchform').bind('click', disable);
 
 var leerMas = 0;
 
