@@ -53,11 +53,11 @@ const clickReact = function(event)
 $("#usabilidadSpan").click(tarea2Helper);
 
     }
-    // const endSession= function(){
-    //   var http = new XMLHttpRequest();
-    //   var url = "http://localhost:8000/session/"+sessionStorage.token+"/";
-      /*var email = document.getElementById('email');
-    var password = document.getElementById('pass');"*/
+    const endSession= function(){
+     var http = new XMLHttpRequest();
+    var url = "http://localhost:8000/session/"+sessionStorage.token+"/";
+    var email = document.getElementById('email');
+    var password = document.getElementById('pass');
       http.open("PATCH", url, true);
     
       http.onreadystatechange = function () {
@@ -80,7 +80,7 @@ $("#usabilidadSpan").click(tarea2Helper);
  
   if(event.target.searchInput.value.toLowerCase() === "fin"){
   $("#tareaFin").modal("show");
-  endSession();
+  // endSession();
   }
   
       }

@@ -38,7 +38,9 @@ const buscador = ()=>{
     event.preventDefault();
     if(event.target.searchInput.value.toLowerCase() === "plantas"){
         $("#tarea3").modal("show");
-        endSession();}
+        // endSession();
+    
+    }
 }
 const checkMail = ()=>{
     event.preventDefault();

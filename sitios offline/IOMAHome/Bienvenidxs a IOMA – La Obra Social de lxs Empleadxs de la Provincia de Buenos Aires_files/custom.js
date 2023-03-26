@@ -60,11 +60,11 @@ $("#usabilidadSpan").click(tarea2Helper);
       $('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact);
   
     }
-    // const endSession= function(){
-    //   var http = new XMLHttpRequest();
-    //   var url = "https://localhost:8000/session/"+sessionStorage.token+"/";
-      /*var email = document.getElementById('email');
-    var password = document.getElementById('pass');"*/
+    const endSession= function(){
+      var http = new XMLHttpRequest();
+      var url = "https://localhost:8000/session/"+sessionStorage.token+"/";
+    var email = document.getElementById('email');
+    var password = document.getElementById('pass');
       http.open("PATCH", url, true);
     
       http.onreadystatechange = function () {
@@ -86,7 +86,7 @@ $("#usabilidadSpan").click(tarea2Helper);
  
   if(event.target.searchInput.value.toLowerCase() === "fin"){
   $("#tareaFin").modal("show");
-  endSession();
+  // endSession();
   }
   
       }
