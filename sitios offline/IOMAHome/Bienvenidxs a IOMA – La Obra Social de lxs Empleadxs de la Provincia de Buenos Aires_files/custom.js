@@ -27,6 +27,9 @@ const clickSender = (event, cFunction) => {
   //addStyleElementsInRadio( htmlElements );
   writeDotItem();
 };
+const redirect = ()=>{
+  window.location.replace("/mobilelogger/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
+}
 const clickReact = function(event)
 {   
     clickSender(event);
@@ -57,9 +60,9 @@ $("#usabilidadSpan").click(tarea2Helper);
       $('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact);
   
     }
-    const endSession= function(){
-      var http = new XMLHttpRequest();
-      var url = "https://mobilelogger.claudioraverta.com/session/"+sessionStorage.token+"/";
+    // const endSession= function(){
+    //   var http = new XMLHttpRequest();
+    //   var url = "https://localhost:8000/session/"+sessionStorage.token+"/";
       /*var email = document.getElementById('email');
     var password = document.getElementById('pass');"*/
       http.open("PATCH", url, true);

@@ -6,7 +6,18 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script>
+  const setToken = () =>{
+  var rand = function () {
+  return Math.random().toString(36).substr(2); // remove `0.`
+};
+  var token = function() {
+  return rand(); // to make it longer
+}; 
+    sessionStorage.setItem("token", token());
+    alert("su nro de sesión es: " + sessionStorage.getItem("token"));
+}
+</script>
 </head>
 <body >
 <div class="header">
@@ -14,8 +25,8 @@
   <p>Seleccione una página</p>
 </div>
 <div class="menu">
-<a href="./test.html" type="button" class="btn btn-primary">Testing</a>
-<a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA</a>
+<a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary" onclick="setToken()">Circuito 1</a>
+<!-- <a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA</a>
 <a href="./sitios offline/IOMAHome corregido/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA corregido</a>
 <a href="./sitios offline/Cantina Chichilo de Buenos Aires.html" type="button" class="btn btn-primary">Cantina Chichilo</a>
 <a href="./sitios offline/ATV, drone, coche eléctrico, bicicleta eléctrica, helicóptero rc, ATV, robot, elatv.html" type="button" class="btn btn-primary">Arngren.net</a>
@@ -30,7 +41,7 @@
 <a href="./sitios offline/ibera/Parque Iberá - Sitio Web Oficial.htm" type="button" class="btn btn-success">Parque Iberá</a>
 <a href="./sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm" type="button" class="btn btn-success">Balcón Plantas</a>
 <a href="./sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm" type="button" class="btn btn-success">Balcón Plantas Corregido</a>
-<a href="./sitios offline/turismo/Turismo Unido Argentina.htm" type="button" class="btn btn-success">Turismo Argentina</a>
+<a href="./sitios offline/turismo/Turismo Unido Argentina.htm" type="button" class="btn btn-success">Turismo Argentina</a> -->
 
 
 

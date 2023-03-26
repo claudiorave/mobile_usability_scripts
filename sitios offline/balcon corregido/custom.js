@@ -27,13 +27,13 @@ const tarea1 = ()=>{
 }
 
 const tareaFin = ()=>{
-    event.preventDefault();
-    console.log("TAREFA");
+
 
     $("#tareaFin").modal("show");
-    return true;
 }
-
+const redirect = ()=>{
+    window.location.replace("/mobilelogger/sitios offline/kabytes_corregido/Kabytes.htm");
+  }
 const buscador = ()=>{
     event.preventDefault();
     if(event.target.searchInput.value.toLowerCase() === "plantas"){

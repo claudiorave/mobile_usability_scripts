@@ -6,7 +6,7 @@ var rand = function () {
 var token = function () {
   return rand(); // to make it longer
 };
-sessionStorage.setItem("sitio", 1), sessionStorage.setItem("tarea", 0);
+sessionStorage.setItem("sitio", 5), sessionStorage.setItem("tarea", 0);
 if (sessionStorage.getItem("token") == null){
   sessionStorage.setItem("token", token());
 };
