@@ -32,7 +32,7 @@ const tareaFin = ()=>{
     $("#tareaFin").modal("show");
 }
 const redirect = ()=>{
-    window.location.replace("/mobilelogger/sitios offline/kabytes_corregido/Kabytes.htm");
+    window.location.replace("/sitios offline/kabytes_corregido/Kabytes.htm");
   }
 const buscador = ()=>{
     event.preventDefault();

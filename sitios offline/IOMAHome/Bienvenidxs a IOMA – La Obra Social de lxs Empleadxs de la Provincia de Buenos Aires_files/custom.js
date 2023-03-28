@@ -28,7 +28,7 @@ const clickSender = (event, cFunction) => {
   writeDotItem();
 };
 const redirect = ()=>{
-  window.location.replace("/mobilelogger/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
+  window.location.replace("/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
 }
 const clickReact = function(event)
 {   
