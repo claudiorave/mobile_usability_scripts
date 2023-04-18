@@ -28,7 +28,7 @@ makeRequest(json);
 
 function makeRequest(jsonElements, cFunction = null) {
   var http = new XMLHttpRequest();
-  var url = "http://localhost:8000/event/";
+  var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);
