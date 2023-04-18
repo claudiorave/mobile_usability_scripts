@@ -6,7 +6,6 @@ const clickSender = (event, cFunction) => {
 
   // let todos = document.getElementsByTagName("*");
   let htmlElements = createXPathFromElement(event.target);
-  console.log(htmlElements);
   let current_datetime = new Date();
   let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
   makeRequest(
@@ -22,13 +21,24 @@ const clickSender = (event, cFunction) => {
     }),
     cFunction
   );
-
-  //asignarle a los elemetos un style
-  //addStyleElementsInRadio( htmlElements );
-  writeDotItem();
+};
+const startTareaSender = () => {
+  let current_datetime = new Date();
+  makeRequest(
+    JSON.stringify({
+      type: "click",
+      x: 0,
+      y: 0,
+      elements:[{xpath: "START TAREA"}] ,
+      timestamp:  new Date(),
+      session: sessionStorage.token,
+      sitio: sessionStorage.sitio,
+      tarea:sessionStorage.tarea
+    }),
+  );
 };
 const redirect = ()=>{
-  window.location.replace("/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
+  window.location.replace("./sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
 }
 const clickReact = function(event)
 {   
@@ -51,18 +61,19 @@ const clickReact = function(event)
   const tarea2 = function()
   {   
     sessionStorage.setItem("tarea", 2);
-
+    startTareaSender();
 $("#usabilidadSpan").click(tarea2Helper);
 
     }
     const tarea1 = ()=>{
       sessionStorage.setItem("tarea", 1);
+      startTareaSender();
       $('.sgpb-popup-close-button-2').on('touchstart mousedown click', clickReact);
   
     }
     const endSession= function(){
       var http = new XMLHttpRequest();
-      var url = "https://localhost:8000/session/"+sessionStorage.token+"/";
+      var url = "https://mobilelogger.claudioraverta.com/session/"+sessionStorage.token+"/";
     var email = document.getElementById('email');
     var password = document.getElementById('pass');
       http.open("PATCH", url, true);
@@ -93,6 +104,7 @@ $("#usabilidadSpan").click(tarea2Helper);
 
       const openTarea3 = function(){
         sessionStorage.setItem("tarea", 3);
+        startTareaSender();
         $('#searchform').submit(function() {
           return tarea3(event);
       });

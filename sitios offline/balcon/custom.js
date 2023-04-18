@@ -1,28 +1,51 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
 
+const clickSender = (event, cFunction) => {
+  
+    let htmlElements = createXPathFromElement(event.target);
+    let current_datetime = new Date();
+    let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+    makeRequest(
+      JSON.stringify({
+        type: "click",
+        x: event.clientX,
+        y: event.clientY,
+        elements:[{xpath: htmlElements}] ,
+        timestamp:  new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea:sessionStorage.tarea
+      }),
+      cFunction
+    );
+  };
 const openTarea2 = ()=>{
-    sessionStorage.setItem("tarea", 3);
+    sessionStorage.setItem("tarea", 2);
     closeMenu();
         $('#tareaSearch').submit(buscador);
     } 
 const openTarea3 = ()=>{
+    sessionStorage.setItem("tarea", 3);
     closeSearch();
     $('#formMail').submit(checkMail);
 
 }
 
 const openTarea4 = ()=>{
+    sessionStorage.setItem("tarea", 4);
     $(".menorPrecio").click(tareaFin);
 
 
 }
 
-const tarea2 = ()=>{
+const tarea2 = (event)=>{
     event.preventDefault();
-
+    clickSender(event);
     $("#tarea2").modal("show");
 }
 const tarea1 = ()=>{
+    sessionStorage.setItem("tarea", 1);
+    $("#hambIcon").click(clickSender(ev));
     $("#tareaMenu").click(tarea2);
 }
 

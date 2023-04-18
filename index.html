@@ -14,8 +14,26 @@
   var token = function() {
   return rand(); // to make it longer
 }; 
-    sessionStorage.setItem("token", token());
-    alert("su nro de sesión es: " + sessionStorage.getItem("token"));
+  sessionStorage.setItem("token", token());
+  function startSession(token) {
+  var http = new XMLHttpRequest();
+  var url = "https://mobilelogger.claudioraverta.com/session/";
+  var json = JSON.stringify({
+    token: token,
+  });
+  http.open("POST", url, true);
+
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 201) {
+      console.log(http);
+      alert("su nro de sesión es: " + sessionStorage.getItem("token"));
+      window.location.replace("./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html");
+    }
+  };
+  http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  http.send(json);
+};
+startSession(sessionStorage.getItem("token"));  
 }
 </script>
 </head>
@@ -25,7 +43,7 @@
   <p>Seleccione una página</p>
 </div>
 <div class="menu">
-<a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary" onclick="setToken()">Circuito 1</a>
+<a href="#" type="button" class="btn btn-primary" onclick="setToken()">Circuito 1</a>
 <!-- <a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA</a>
 <a href="./sitios offline/IOMAHome corregido/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA corregido</a>
 <a href="./sitios offline/Cantina Chichilo de Buenos Aires.html" type="button" class="btn btn-primary">Cantina Chichilo</a>

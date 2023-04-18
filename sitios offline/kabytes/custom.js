@@ -11,11 +11,12 @@ const leerMasPlus = () =>{
     } 
 }
 const openTarea2 = ()=>{
-    sessionStorage.setItem("tarea", 3);
+    sessionStorage.setItem("tarea", 2);
     closeMenu();
     $("#tarea2").modal("show");
     } 
 const openTarea3 = ()=>{
+    sessionStorage.setItem("tarea", 3);
     closeSearch();
     $(".read-more").click(leerMasPlus);
 
@@ -37,6 +38,7 @@ const tarea2 = ()=>{
     $("#tarea2").modal("show");
 }
 const tarea1 = ()=>{
+    sessionStorage.setItem("tarea", 1);
     $("#menuTutorial").click(openTarea2);
 }
 

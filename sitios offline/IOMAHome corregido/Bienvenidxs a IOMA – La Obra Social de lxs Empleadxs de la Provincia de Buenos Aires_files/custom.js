@@ -55,7 +55,7 @@ $("#usabilidadSpan").click(tarea2Helper);
     }
     const endSession= function(){
      var http = new XMLHttpRequest();
-    var url = "http://localhost:8000/session/"+sessionStorage.token+"/";
+    var url = "https://mobilelogger.claudioraverta.com/session/"+sessionStorage.token+"/";
     var email = document.getElementById('email');
     var password = document.getElementById('pass');
       http.open("PATCH", url, true);

@@ -1,27 +1,71 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
 const disable = function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; };
+const clickSender = (event, cFunction) => {
+    let htmlElements = createXPathFromElement(event.target);
+    let current_datetime = new Date();
+    let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+    makeRequest(
+      JSON.stringify({
+        type: "click",
+        x: event.clientX,
+        y: event.clientY,
+        elements:[{xpath: htmlElements}] ,
+        timestamp:  new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea:sessionStorage.tarea
+      }),
+      cFunction
+    );
+  };
 
+  const startTareaSender = () => {
+    let current_datetime = new Date();
+    makeRequest(
+      JSON.stringify({
+        type: "click",
+        x: 0,
+        y: 0,
+        elements:[{xpath: "START TAREA"}] ,
+        timestamp:  new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea:sessionStorage.tarea
+      }),
+    );
+  };
 var leerMas = 0;
 
-const leerMasPlus = () =>{
+const leerMasPlus = (event) =>{
     leerMas++;
+    clickSender(event);
     $(event.target).unbind("click");
     if (leerMas > 2){
         $("#tarea4").modal("show");
     } 
 }
-const openTarea2 = ()=>{
-    sessionStorage.setItem("tarea", 3);
+const openTarea2 = (event)=>{
+    clickSender(event);
+    $("#burga").unbind("click", clickSender);
+    $("#menuTutorial").unbind("click", openTarea2);
+    $("#searchButton").click(clickSender);
+    $("#searchInput").click(clickSender);
+    sessionStorage.setItem("tarea", 2);
     closeMenu();
     $("#tarea2").modal("show");
     } 
 const openTarea3 = ()=>{
     closeSearch();
+    $("#searchButton").unbind("click",clickSender);
+    $("#searchInput").unbind("click",clickSender);
+    sessionStorage.setItem("tarea", 3);
+   startTareaSender();
     $(".read-more").click(leerMasPlus);
 
 }
 
 const startTarea2 = () =>{
+    startTareaSender();
     $('#searchform').unbind();
     $('#searchform').submit(buscador);
 }
@@ -32,18 +76,15 @@ const openTarea4 = ()=>{
 
 }
 
-const tarea2 = ()=>{
-    event.preventDefault();
-
-    $("#tarea2").modal("show");
-}
 const tarea1 = ()=>{
+    sessionStorage.setItem("tarea", 1);
+    startTareaSender();
+    $("#burga").click(clickSender);
     $("#menuTutorial").click(openTarea2);
 }
 
 const tareaFin = ()=>{
     event.preventDefault();
-    console.log("TAREFA");
 
     $("#tareaFin").modal("show");
     return true;
@@ -54,15 +95,6 @@ const buscador = ()=>{
     if(event.target.searchInput.value.toLowerCase() === "usuario"){
         $("#tarea3").modal("show");
 }
-}
-const checkMail = ()=>{
-    event.preventDefault();
-    console.log(event.target.contactEmail.value);
-    if(event.target.contactEmail.value.toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )){
-    $("#tarea4").modal("show");}
 }
 
 const closeMenu = ()=>{

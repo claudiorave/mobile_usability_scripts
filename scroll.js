@@ -60,10 +60,12 @@
   function detectElemtsScroll(container, listContents)
   { //revisa si alguno de los hijos contendio es mayor al contenedor
     let sumHeightContent=0;
+  
     for ( let i=0;i < listContents.length ;i++)
     {
       if( isOverflowContent(container, listContents[i]) )
       { // console.log("event Scroll Insert");
+      
         setScrollEvent(container);   
         return true;
       }else
@@ -138,14 +140,16 @@
 // envia la info del evento scroll
   function sendDataScrollEvent()
   { //info Consola
-    console.log(">> Send scroll Event Info ");
     //console.log(domCurrentObj);
     //console.log( JSON.stringify(scrollEventInfo) );
     
     //referencia al obj que se realizo el evento
     scrollEventInfo.setDomScrollObj( createXPathFromElement( domCurrentObj ) );
     //envio de info a Pharo server
-    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollEventInfo.arrayScrollPoints), elements:scrollEventInfo.domScrollObj, type:'scroll', session: sessionStorage.token, sitio: sessionStorage.sitio, tarea:sessionStorage.tarea}  ) );
+    scrollPoints = []
+    scrollPoints.push(scrollEventInfo.arrayScrollPoints.at(0))
+    scrollPoints.push(scrollEventInfo.arrayScrollPoints.at(-1))
+    makeRequest( JSON.stringify({timestamp: new Date().toJSON(), scroll_points:JSON.stringify(scrollPoints), elements:scrollEventInfo.domScrollObj, type:'scroll', session: sessionStorage.token, sitio: sessionStorage.sitio, tarea:sessionStorage.tarea}  ) );
     
     resetScrollDataInfo();
   }

@@ -215,7 +215,7 @@ var mashsb = {"shares":"16","round_shares":"1","animate_shares":"0","dynamic_but
 	      	<li class="marginLeft"><a href="https://www.facebook.com/Kabytes-55332019087/?fref=ts" title="Kabytes en Facebook" target="_blank"><i class="fi-cnsuxl-facebook" style="color: black;"></i></a></li>
 	      	<li class="marginLeft"><a href="https://twitter.com/Kabytes" title="Kabytes en Twitter" target="_blank"><i class="fi-cnsuxl-twitter-solid" style="color: black;"></i></a></li>
 	      	<li class="marginLeft"><a href="https://feeds.feedburner.com/kabytes" title="Feed Kabytes" target="_blank"><i class="fi-cnsuxl-rss" style="color: black;"></i></a></li>
-	        <li class="marginLeft" onclick="openSearchDiv()"><i class="fi-xnsuhl-search" style="color: black;"></i></li>
+	        <li class="marginLeft" id="searchButton" onclick="openSearchDiv()"><i class="fi-xnsuhl-search" style="color: black;"></i></li>
 	      </ul>
 	    </div>
 	  </nav>
@@ -713,7 +713,7 @@ pageTracker._trackPageview();
 
 
 
-<div id="mm-blocker" class="mm-slideout"></div><div class="open-menu fixed mm-slideout"><a href="#menu" onclick="openMenu()"><span style="z-index: 999999;"class="glyphicon glyphicon-menu-hamburger"><i class="fi-xnsuxl-three-bars-solid"></i></span></a></div>
+<div id="mm-blocker" class="mm-slideout"></div><div class="open-menu fixed mm-slideout"><a href="#menu" id="burga" onclick="openMenu()"><span style="z-index: 999999;"class="glyphicon glyphicon-menu-hamburger"><i class="fi-xnsuxl-three-bars-solid"></i></span></a></div>
 
 <!-- <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" style="border: medium none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/ads.htm" data-google-container-id="a!3" data-load-complete="true" frameborder="0"></iframe></div></ins><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: block; width: 100% !important; height: 95px !important; bottom: 0px; clear: none !important; float: none !important; left: 0px; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1; overflow: visible !important; padding: 0px !important; position: fixed; right: auto !important; top: auto !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647; background: rgb(250, 250, 250) none repeat scroll 0% 0% !important;" data-anchor-status="displayed" data-ad-status="filled" data-anchor-shown="true"><div class="grippy-host"></div><div id="aswift_4_host" style="border: medium none !important; height: 90px !important; width: 100% !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_4" name="aswift_4" style="width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="Kabytes_files/zrt_lookup.htm" data-google-container-id="a!5" data-google-query-id="CPie84Cd1vkCFUwwuQYdzMEHvQ" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></div></ins> -->
 
@@ -869,35 +869,6 @@ tabindex="-1"
 		  class="btn btn-primary"
 		  data-bs-dismiss="modal"
 		  onclick="openTarea3()"
-		>
-		  Comenzar
-		</button>
-	  </div>
-	</div>
-  </div>
-</div>
-<div
-  class="modal fade"
-  id="tarea2"
-  aria-hidden="true"
-  aria-labelledby="exampleModalToggleLabel2"
-  tabindex="-1"
->
-  <div class="modal-dialog modal-dialog-centered">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 2</h5>
-	  </div>
-	  <div class="modal-body">
-		Presione sobre el icono de búsqueda y a
-		continuación ingrese "plantas" en la barra de búsqueda
-	  </div>
-	  <div class="modal-footer">
-		<button
-		  type="button"
-		  class="btn btn-primary"
-		  data-bs-dismiss="modal"
-		  onclick="closeMenu()"
 		>
 		  Comenzar
 		</button>
