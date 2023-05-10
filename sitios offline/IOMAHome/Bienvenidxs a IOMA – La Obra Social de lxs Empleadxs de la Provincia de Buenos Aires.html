@@ -2652,7 +2652,7 @@
       aria-labelledby="exampleModalToggleLabel"
       tabindex="-1"
     >
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered bg-warning.bg-gradient">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalToggleLabel">
@@ -2666,10 +2666,11 @@
           </div>
           <div class="modal-footer">
             <button
-              class="btn btn-primary"
+              class="btn btn-dark"
               data-bs-target="#exampleModalToggle2"
               data-bs-toggle="modal"
               data-bs-dismiss="modal"
+              onclick="startAnimation()"
             >
               Siguiente
             </button>
@@ -2678,16 +2679,47 @@
       </div>
     </div>
     <div
+    class="modal fade"
+    id="exampleModalToggle2"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered bg-warning.bg-gradient">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">
+            Bienvenid@!
+          </h5>
+        </div>
+        <div class="modal-body">
+          Si en algún momento desea recordar la tarea en curso, presione la solapa "Tarea" 
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-dark"
+            data-bs-target="#exampleModalToggle3"
+            data-bs-toggle="modal"
+            data-bs-dismiss="modal"
+            onclick="stopAnimation()"
+          >
+            Siguiente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div
       class="modal fade"
-      id="exampleModalToggle2"
+      id="exampleModalToggle3"
       aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel2"
+      aria-labelledby="exampleModalToggleLabel3"
       tabindex="-1"
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel2">Tarea 1</h5>
+            <h5 class="modal-title" id="exampleModalToggleLabel3">Tarea 1</h5>
           </div>
           <div class="modal-body">
             Intente cerrar los anuncios que aparecen en la parte inferior de la
@@ -2704,7 +2736,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-dark"
               data-bs-dismiss="modal"
               onclick="tarea1()"
             >
@@ -2725,7 +2757,7 @@
             <p>Encuentre la la cifra y presione sobre la misma</p>
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="tarea2(Event)" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+            <button type="button" onclick="tarea2(Event)" class="btn btn-dark" data-bs-dismiss="modal">Continuar</button>
           </div>
         </div>
       </div>
@@ -2741,7 +2773,7 @@
             <p>Encuéntrelo, ingrese la palabra "fin" y presione el botón de buscar</p>
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="openTarea3()" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+            <button type="button" onclick="openTarea3()" class="btn btn-dark" data-bs-dismiss="modal">Continuar</button>
           </div>
         </div>
       </div>
@@ -2761,6 +2793,11 @@
         </div>
       </div>
     </div>
+    <div id="spinner" class="modal-backdrop" style="display: none;">
+    <div  class="spinner-border text-light" role="status" >
+      <span class="sr-only">Cargando...</span>
+    </div>
+    </div>
     <script
       src="../../js/jquery-3.2.1.slim.min.js"
     ></script>
@@ -2776,4 +2813,8 @@
       });
     </script>
     </body>
+
 </html>
+
+<div id="sidebar" class="badge badge-secondary">Tarea</div>
+

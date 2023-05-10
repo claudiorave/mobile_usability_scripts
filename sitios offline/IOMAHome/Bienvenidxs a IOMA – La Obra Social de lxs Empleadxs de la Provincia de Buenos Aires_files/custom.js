@@ -22,6 +22,13 @@ const clickSender = (event, cFunction) => {
     cFunction
   );
 };
+const startAnimation = () => {
+  $("#sidebar").addClass("animation");
+};
+const stopAnimation = () => {
+  $("#sidebar").removeClass("animation");
+};
+
 const startTareaSender = () => {
   let current_datetime = new Date();
   makeRequest(
@@ -38,6 +45,7 @@ const startTareaSender = () => {
   );
 };
 const redirect = ()=>{
+  $('#spinner').show();
   window.location.replace("/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm");
 }
 const clickReact = function(event)
@@ -96,7 +104,7 @@ $("#usabilidadSpan").click(tarea2Helper);
   event.preventDefault();
  
   if(event.target.searchInput.value.toLowerCase() === "fin"){
-  $("#tareaFin").modal("show");
+    redirect();
   // endSession();
   }
   
