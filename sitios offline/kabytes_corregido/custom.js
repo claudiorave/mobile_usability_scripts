@@ -1,4 +1,31 @@
+
+
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+$(document).ready(function () {
+	$("#tarea1").modal("show");
+  });
+  const endSession = function () {
+    var http = new XMLHttpRequest();
+    var url =
+      "https://mobilelogger.claudioraverta.com/session/" +
+      sessionStorage.token +
+      "/";
+    var email = document.getElementById("email");
+    var password = document.getElementById("pass");
+    http.open("PATCH", url, true);
+  
+    http.onreadystatechange = function () {
+      if (http.readyState == 4 && http.status == 200) {
+        //aqui obtienes la respuesta de tu peticion
+      }
+    };
+    jsonElements = JSON.stringify({
+      active: false,
+    });
+    http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    console.log(jsonElements);
+    http.send(jsonElements);
+  };
 const disable = function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; };
 const clickSender = (event, cFunction) => {
     let htmlElements = createXPathFromElement(event.target);
@@ -41,6 +68,7 @@ const leerMasPlus = (event) =>{
     clickSender(event);
     $(event.target).unbind("click");
     if (leerMas > 2){
+        endSession();
         $("#tarea4").modal("show");
     } 
 }
@@ -72,13 +100,18 @@ const startTarea2 = () =>{
 
 const openTarea4 = ()=>{
     $(".menorPrecio").click(tareaFin);
-
-
 }
-
+const openTareaHelper = () =>{
+    $("#sidebar").click(helperModal);
+  };
+  
+  const helperModal = () => {
+  $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
+  }
 const tarea1 = ()=>{
     sessionStorage.setItem("tarea", 1);
     startTareaSender();
+    openTareaHelper();
     $("#burga").click(clickSender);
     $("#menuTutorial").click(openTarea2);
 }
@@ -93,7 +126,7 @@ const tareaFin = ()=>{
 const buscador = ()=>{
     event.preventDefault();
     if(event.target.searchInput.value.toLowerCase() === "usuario"){
-        $("#tarea3").modal("show");
+        $("#tarea33").modal("show");
 }
 }
 

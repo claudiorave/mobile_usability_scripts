@@ -2697,8 +2697,16 @@
         </div>
         <div class="modal-footer">
           <button
+          class="btn btn-secondary"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          data-bs-dismiss="modal"
+        >
+          Volver
+        </button>
+          <button
             class="btn btn-dark"
-            data-bs-target="#exampleModalToggle3"
+            data-bs-target="#tarea11"
             data-bs-toggle="modal"
             data-bs-dismiss="modal"
             onclick="stopAnimation()"
@@ -2711,7 +2719,7 @@
   </div>
     <div
       class="modal fade"
-      id="exampleModalToggle3"
+      id="tarea11"
       aria-hidden="true"
       aria-labelledby="exampleModalToggleLabel3"
       tabindex="-1"
@@ -2728,7 +2736,7 @@
           <div class="modal-footer">
             <button
               class="btn btn-secondary"
-              data-bs-target="#myModal"
+              data-bs-target="#exampleModalToggle2"
               data-bs-toggle="modal"
               data-bs-dismiss="modal"
             >
@@ -2746,6 +2754,36 @@
         </div>
       </div>
     </div>
+    <div
+    class="modal fade"
+    id="tarea1"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel3"
+    tabindex="-1"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel3">Tarea 1</h5>
+        </div>
+        <div class="modal-body">
+          Intente cerrar los anuncios que aparecen en la parte inferior de la
+          página
+        </div>
+        <div class="modal-footer">
+          
+          <button
+            type="button"
+            class="btn btn-dark"
+            data-bs-dismiss="modal"
+           
+          >
+            Continuar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="modal" id="tarea2" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -2807,11 +2845,11 @@
     <script
       src="../../js/bootstrap.min.js"
     ></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $(window).on("load", function () {
         $("#myModal").modal("show");
       });
-    </script>
+    </script> -->
     </body>
 
 </html>

@@ -1,4 +1,7 @@
 $('a').click(function(ev) { ev.preventDefault(); ev.stopPropagation(); return false; });
+$(document).ready(function () {
+  $("#tarea1").modal("show");
+});
 const clickSender = (event, cFunction) => {
     let htmlElements = createXPathFromElement(event.target);
     let current_datetime = new Date();
@@ -67,9 +70,17 @@ const tarea2 = (event)=>{
 
     $("#tarea2").modal("show");
 }
+const openTareaHelper = () =>{
+  $("#sidebar").click(helperModal);
+};
+
+const helperModal = () => {
+$("#tarea" + sessionStorage.getItem("tarea")).modal("show");
+}
 const tarea1 = ()=>{
     sessionStorage.setItem("tarea", 1);
     startTareaSender();
+    openTareaHelper();
     $("#burga").click(clickSender);
     $("#tareaMenu").click(tarea2);
 }
@@ -78,9 +89,10 @@ const tareaFin = (event)=>{
 
     clickSender(event);
 
-    $("#tareaFin").modal("show");
+    redirect();
 }
 const redirect = ()=>{
+  $("#spinner").show();
     window.location.replace("/sitios offline/kabytes_corregido/Kabytes.htm");
   }
 const buscador = ()=>{

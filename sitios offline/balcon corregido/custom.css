@@ -127,6 +127,15 @@
 
 .modal-header{
   border-color: black;
+  color: black;
+
+}
+.modal-body{
+  color: black;
+}
+
+.modal-footer{
+  border-color: black;
 
 }
 @keyframes example {
@@ -140,15 +149,15 @@
 
 }
 #sidebar {
-  z-index: 999987; 
-  transform: rotate(270deg);
+  z-index: 2147483640 !important; 
   background-color: orange;
   color: black;
   font-size: larger;
   font-weight: bolder;
+  font-family: 'Encode Sans', sans-serif;
   position: fixed;
-  top: 40px !important;
-  right: -25px !important;
+  bottom: 0px !important;
+  right: 40% !important;
   border-radius: 15% 15% 0 0 !important;
 }
 .spinner-border{
