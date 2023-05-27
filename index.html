@@ -22,12 +22,15 @@
     token: token,
   });
   http.open("POST", url, true);
+  var circuitos = [
+    "./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html",
+    "./sitios offline/IOMAHome corregido/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html"
+]
+const randomCircuito = circuitos[Math.floor(Math.random() * circuitos.length)];
 
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 201) {
-      console.log(http);
-      alert("su nro de sesión es: " + sessionStorage.getItem("token"));
-      window.location.replace("./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html");
+      window.location.replace(randomCircuito);
     }
   };
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -35,15 +38,16 @@
 };
 startSession(sessionStorage.getItem("token"));  
 }
+document.ready(setToken());
 </script>
 </head>
-<body >
+<!-- <body >
 <div class="header">
   <h1>Mobile usability testing</h1>
   <p>Seleccione una página</p>
 </div>
 <div class="menu">
-<a href="#" type="button" class="btn btn-primary" onclick="setToken()">Circuito 1</a>
+<a href="#" type="button" class="btn btn-primary" onclick="setToken()">Circuito 1</a> -->
 <!-- <a href="./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA</a>
 <a href="./sitios offline/IOMAHome corregido/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html" type="button" class="btn btn-primary">IOMA corregido</a>
 <a href="./sitios offline/Cantina Chichilo de Buenos Aires.html" type="button" class="btn btn-primary">Cantina Chichilo</a>

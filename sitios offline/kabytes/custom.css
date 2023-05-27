@@ -149,3 +149,35 @@ html, body {
 #main-nav, #main-nav-container{
   max-width: 100% !important;
 }
+
+.modal-content{
+  background-color: orange;
+  border-color: black;
+}
+
+.modal-header{
+  border-color: black;
+  color: black;
+
+}
+.modal-body{
+  color: black;
+}
+
+.modal-footer{
+  border-color: black;
+
+}
+
+#sidebar{
+  z-index: 2147483640 !important; 
+  background-color: orange;
+  font-family: 'Encode Sans', sans-serif;
+  color: black;
+  font-size: larger;
+  font-weight: bolder;
+  position: fixed;
+  bottom: 0px !important;
+  right: 40% !important;
+  border-radius: 15% 15% 0 0 !important;
+}

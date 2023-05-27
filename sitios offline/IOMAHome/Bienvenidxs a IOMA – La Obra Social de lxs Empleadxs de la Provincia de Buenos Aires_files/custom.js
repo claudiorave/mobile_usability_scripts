@@ -3,7 +3,6 @@ $(document).ready(function () {
 	$("#myModal").modal("show");
   });
 const clickSender = (event, cFunction) => {
-  console.log("CLICK CORRECTO");
   removeDotItemPrevious();
   removeStyleElementsInRadioPrevious();
 
@@ -153,7 +152,7 @@ $(".popup").click(function (ev) {
   ev.stopPropagation();
   return false;
 });
-$("#searchform").submit(function (event) {
+  $("#searchform").submit(function (event) {
   clickSender(event);
   event.preventDefault();
 });

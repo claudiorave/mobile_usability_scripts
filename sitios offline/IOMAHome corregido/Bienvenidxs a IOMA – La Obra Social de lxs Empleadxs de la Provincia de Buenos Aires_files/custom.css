@@ -37,6 +37,52 @@
     z-index: 999988 !important; 
 }
 
+.modal-content{
+  background-color: orange;
+  border-color: black;
+}
+
+.modal-header{
+  border-color: black;
+
+}
+
+.modal-footer{
+  border-color: black;
+
+}
+@keyframes example {
+  from {z-index: 999987 ; }
+  to {z-index: 999999 ; }
+}
+.animation{
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+}
+#sidebar {
+  z-index: 999987; 
+  /* transform: rotate(270deg); */
+  background-color: orange;
+  color: black;
+  font-size: larger;
+  font-weight: bolder;
+  font-family: 'Encode Sans', sans-serif;
+
+  position: fixed;
+  bottom: 0px !important;
+  right: 40% !important;
+  border-radius: 15% 15% 0 0 !important;
+}
+.spinner-border{
+  position: fixed;
+  z-index: 999999 !important;
+  top: 50%;
+left: 40%;
+height: 50px;
+width: 50px;
+}
 
 #search-3{
   margin-bottom: 10px !important;
