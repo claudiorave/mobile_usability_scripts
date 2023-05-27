@@ -91,12 +91,20 @@ const leerMasPlus = () => {
     $("#tarea4").modal("show");
   }
 };
-const openTarea2 = () => {
+const openTarea2 = (event) => {
+    clickSender(event);
+  $("#burga").unbind("click", clickSender);
+  $("#menuTutorial").unbind("click", openTarea2);
+  $("#searchButton").click(clickSender);
+  $("#searchInput").click(clickSender);
   sessionStorage.setItem("tarea", 2);
   closeMenu();
   $("#tarea2").modal("show");
 };
 const openTarea3 = () => {
+    closeSearch();
+    $("#searchButton").unbind("click", clickSender);
+    $("#searchInput").unbind("click", clickSender);
   sessionStorage.setItem("tarea", 3);
   closeSearch();
   $(".read-more").click(leerMasPlus);
@@ -104,6 +112,7 @@ const openTarea3 = () => {
 
 const startTarea2 = () => {
     startTareaSender();
+    $("#searchform").unbind();
 
   $("#searchform").submit(buscador);
 };

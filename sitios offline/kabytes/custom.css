@@ -181,3 +181,8 @@ html, body {
   right: 40% !important;
   border-radius: 15% 15% 0 0 !important;
 }
+
+#buscador input{
+  width: 65% !important;
+  margin: auto !important;
+}
