@@ -59,14 +59,13 @@ const startTareaSender = () => {
 const redirect = () => {
   $("#spinner").show();
   window.location.replace(
-    "/mobilelogger/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
+    "/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
   );
 };
 const clickReact = function (event) {
   clickSender(event);
   event.preventDefault();
   clicks = clicks + 1;
-  console.log(clicks);
   var target = event.target;
   $(target).parent().parent().hide();
   if (clicks == 3) {
