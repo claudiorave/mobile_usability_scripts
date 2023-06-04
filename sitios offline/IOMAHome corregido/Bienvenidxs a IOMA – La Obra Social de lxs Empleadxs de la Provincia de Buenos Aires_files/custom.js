@@ -115,7 +115,7 @@ const tarea3 = function (event) {
   clickSender(event);
   event.preventDefault();
 
-  if (event.target.searchInput.value.toLowerCase() === "fin") {
+  if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "fin") {
     redirect();
   }
 };

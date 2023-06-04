@@ -108,7 +108,7 @@ const redirect = () => {
   };
   const buscador = () => {
     event.preventDefault();
-    if (event.target.searchInput.value.toLowerCase() === "plantas") {
+    if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "plantas") {
       $("#tareaSearch").unbind("click", clickSender);
       $("#searchIcon").unbind("click", clickSender);
   

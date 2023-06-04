@@ -141,7 +141,7 @@ const tareaFin = () => {
 
 const buscador = () => {
   event.preventDefault();
-  if (event.target.searchInput.value.toLowerCase() === "usuario") {
+  if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "usuario") {
     $("#tarea33").modal("show");
   }
 };
