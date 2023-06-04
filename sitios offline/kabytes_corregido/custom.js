@@ -83,7 +83,7 @@ var leerMas = 0;
 const leerMasPlus = (event) => {
   leerMas++;
   clickSender(event);
-  $(event.target).unbind("click");
+  $(event.target).unbind("click", leerMasPlus);
   if (leerMas > 2) {
     endSession();
     $("#tarea4").modal("show");
