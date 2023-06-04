@@ -42,7 +42,6 @@ var password = document.getElementById('pass');"*/
     }
   };
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  console.log(jsonElements);
   http.send(jsonElements);
 }
 

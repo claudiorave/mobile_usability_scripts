@@ -59,7 +59,7 @@ const startTareaSender = () => {
 const redirect = () => {
   $("#spinner").show();
   window.location.replace(
-    "/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
+    "/mobilelogger/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
   );
 };
 const clickReact = function (event) {

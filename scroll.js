@@ -39,11 +39,13 @@
   {
     console.log(">>>> Escroll Event Initialize ");
     //itera sobre todo el arbol de elementos de body buscando candidatos para el eventScroll 
-    findScrollElements( document.body );
+    // findScrollElements( document.body );
     
     //caso especial body (body no conoce "scrollTop" "scrollLeft" ) 
     //document se le envia documentElement para recuperar body y se puedan consultar  scrollTop
-    window.onscroll = (event) => { onScrollEvent(event,document.documentElement) };
+    window.onscroll = (event) => { 
+      onScrollEvent(event,document.documentElement);
+     };
   }
 
 

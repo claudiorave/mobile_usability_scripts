@@ -20,7 +20,6 @@ function elementosRadio() {
       55,
       document.getElementsByTagName("*")
     );
-    console.log(htmlElements);
     let current_datetime = new Date();
     let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
     makeRequest(
@@ -51,9 +50,7 @@ function removeDotItemPrevious() {
 
 function removeStyleElementsInRadioPrevious() {
   //remover los elementos con boxShadow
-  console.log("*** element con sombra anteriores ");
   let htmlItemsInRadio = document.getElementsByClassName("boxShadow");
-  console.log(htmlItemsInRadio);
 
   for (i = 0; i < htmlItemsInRadio.length; i++) {
     htmlItemsInRadio[i].classList.remove("boxShadow");
@@ -68,7 +65,6 @@ function elementsInRadio(center_x, center_y, radio, todos) {
     if (
       intersectan(center_x, center_y, radio, todos[i].getBoundingClientRect())
     ) {
-      console.log(todos[i]);
       todos[i].classList.add("boxShadow");
 
       htmlElements.push({ xpath: createXPathFromElement(todos[i]) });

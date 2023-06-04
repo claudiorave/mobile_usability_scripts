@@ -103,7 +103,7 @@ const tareaFin = (event) => {
 };
 const redirect = () => {
   $("#spinner").show();
-  window.location.replace("/sitios offline/kabytes_corregido/Kabytes.htm");
+  window.location.replace("/mobileloger/sitios offline/kabytes_corregido/Kabytes.htm");
 };
 const buscador = () => {
   event.preventDefault();

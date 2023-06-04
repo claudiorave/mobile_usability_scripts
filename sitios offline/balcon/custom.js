@@ -104,7 +104,7 @@ const tareaFin = (event) => {
 };
 const redirect = () => {
     $("#spinner").show();
-    window.location.replace("/sitios offline/kabytes/Kabytes.htm");
+    window.location.replace("/mobilelogger/sitios offline/kabytes/Kabytes.htm");
   };
   const buscador = () => {
     event.preventDefault();

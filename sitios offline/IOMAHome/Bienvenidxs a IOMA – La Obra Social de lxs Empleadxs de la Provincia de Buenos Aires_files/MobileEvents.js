@@ -36,13 +36,11 @@ var password = document.getElementById('pass');"*/
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
       if (cFunction) {
-        console.log("CERRAR SESIÓN");
         cFunction(this);
       }
     }
   };
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  console.log(jsonElements);
   http.send(jsonElements);
 }
 
