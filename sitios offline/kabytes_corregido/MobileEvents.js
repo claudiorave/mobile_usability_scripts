@@ -10,21 +10,7 @@ sessionStorage.setItem("sitio", 6), sessionStorage.setItem("tarea", 0);
 if (sessionStorage.getItem("token") == null){
   sessionStorage.setItem("token", token());
 };
-var md = new MobileDetect(window.navigator.userAgent);
-var json = JSON.stringify({
-  type: "device",
-  phone: md.phone(),
-  mobile: md.mobile(),
-  tablet: md.tablet(),
-  user_agent: md.userAgent(),
-  build: md.versionStr("Build"),
-  webkit: md.version("Webkit"),
-  os: md.os(),
-  height: window.screen.height,
-  width: window.screen.width,
-  session: sessionToken,
-});
-makeRequest(json);
+
 
 function makeRequest(jsonElements, cFunction = null) {
   var http = new XMLHttpRequest();
