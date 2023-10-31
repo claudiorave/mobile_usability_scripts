@@ -14,7 +14,7 @@ if (sessionStorage.getItem("token") == null){
 
 function makeRequest(jsonElements, cFunction = null) {
   var http = new XMLHttpRequest();
-  var url = "https://mobilelogger.claudioraverta.com/event/";  /*var email = document.getElementById('email');
+  var url = "https://06c9-85-190-229-61.ngrok-free.app/event/";  /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);
 

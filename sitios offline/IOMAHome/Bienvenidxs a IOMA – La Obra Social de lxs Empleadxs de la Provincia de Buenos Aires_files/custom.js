@@ -60,7 +60,7 @@ const startTareaSender = () => {
 const redirect = () => {
   $("#spinner").show();
   window.location.replace(
-    "/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
+    "/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
   );
 };
 const clickReact = function (event) {
@@ -92,7 +92,7 @@ const tarea1 = () => {
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://mobilelogger.claudioraverta.com/session/" +
+    "https://06c9-85-190-229-61.ngrok-free.app/session/" +
     sessionStorage.token +
     "/";
   var email = document.getElementById("email");
