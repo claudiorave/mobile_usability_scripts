@@ -9,7 +9,7 @@ $(document).ready(function () {
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://06c9-85-190-229-61.ngrok-free.app/session/" +
+    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
     sessionStorage.token +
     "/";
   var email = document.getElementById("email");

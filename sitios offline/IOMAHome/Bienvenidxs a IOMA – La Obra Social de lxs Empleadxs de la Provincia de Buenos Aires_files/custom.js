@@ -1,4 +1,5 @@
 var clicks = 0;
+
 $(document).ready(function () {
 	$("#myModal").modal("show");
   });
@@ -32,7 +33,6 @@ const clickSender = (event, cFunction) => {
       sitio: sessionStorage.sitio,
       tarea: sessionStorage.tarea,
     }),
-    cFunction
   );
 };
 const startAnimation = () => {
@@ -60,8 +60,14 @@ const startTareaSender = () => {
 const redirect = () => {
   $("#spinner").show();
   window.location.replace(
-    "/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
+    "/mobile_usability_scripts/sitios offline/balcon corregido/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
   );
+};
+const tarea2 = function (event) {
+  event.stopPropagation();
+  sessionStorage.setItem("tarea", 2);
+  startTareaSender();
+  $("#usabilidadSpan").click(tarea2Helper);
 };
 const clickReact = function (event) {
   clickSender(event);
@@ -71,28 +77,41 @@ const clickReact = function (event) {
   $(target).parent().parent().hide();
   if (clicks == 3) {
     $("#tarea2").modal("show");
+    $("#tarea2_start").on("click", tarea2);
   }
 };
 const tarea2Helper = function (event) {
+  event.stopPropagation();
   clickSender(event);
-  event.preventDefault();
+  $("#startTarea3").on("click", openTarea3);
   $("#tarea3").modal("show");
 };
-const tarea2 = function () {
-  sessionStorage.setItem("tarea", 2);
-  startTareaSender();
-  $("#usabilidadSpan").click(tarea2Helper);
-};
-const tarea1 = () => {
+
+const tarea1 = (event) => {
+  event.stopPropagation();
   sessionStorage.setItem("tarea", 1);
   startTareaSender();
   openTareaHelper();
   $(".sgpb-popup-close-button-2").on("touchstart mousedown click", clickReact);
 };
+const tarea0 = (event) => {
+  event.stopPropagation();
+  sessionStorage.setItem("tarea", 0);
+  startTareaSender();
+};
+const tareaInput = (event) => {
+  event.stopPropagation();
+  clickSender(event);
+};
+$("#tarea1_start").unbind();
+$("#tarea1_start").on("click", tarea1);
+$("#presentacion_continue, #presentacion_2_continue").unbind();
+$("#presentacion_continue, #presentacion_2_continue").on("click", tarea0);
+
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://06c9-85-190-229-61.ngrok-free.app/session/" +
+    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
     sessionStorage.token +
     "/";
   var email = document.getElementById("email");
@@ -108,13 +127,10 @@ const endSession = function () {
     active: false,
   });
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  console.log(jsonElements);
   http.send(jsonElements);
 };
 const tarea3 = function (event) {
-  clickSender(event, endSession);
   event.preventDefault();
-
   if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "fin") {
     redirect();
     // endSession();
@@ -129,11 +145,15 @@ const helperModal = () => {
 $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
 }
 
-const openTarea3 = function () {
+const openTarea3 = function (event) {
+  event.stopPropagation();
   sessionStorage.setItem("tarea", 3);
   startTareaSender();
-  $("#searchform").submit(function () {
-    return tarea3(event);
+  console.log(event);
+  $("#search-3").click(tareaInput);
+  $("#searchform").submit(function (evento) {
+    console.log(evento);
+    return tarea3(evento);
   });
 };
 
@@ -152,7 +172,7 @@ $(".popup").click(function (ev) {
   ev.stopPropagation();
   return false;
 });
-  $("#searchform").submit(function (event) {
-  clickSender(event);
-  event.preventDefault();
-});
+//   $("#searchform").submit(function (event) {
+//   clickSender(event);
+//   event.preventDefault();
+// });

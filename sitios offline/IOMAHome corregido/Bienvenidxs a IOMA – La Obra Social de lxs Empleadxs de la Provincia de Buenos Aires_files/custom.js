@@ -78,11 +78,17 @@ const tarea2Helper = function (event) {
   $("#tarea3").modal("show");
 };
 const tarea1 = () => {
+  console.log("TAREA 1");
+  event.preventDefault();
   sessionStorage.setItem("tarea", 1);
   startTareaSender();
   openTareaHelper();
   $(".sgpb-popup-close-button-2").on("touchstart mousedown click", clickReact);
 };
+$("#tarea1_start").unbind();
+console.log("UNBIND BUTTON");
+$("#tarea1_start").on("click", tarea1);
+
 const tarea2 = function () {
   sessionStorage.setItem("tarea", 2);
   startTareaSender();
@@ -92,7 +98,7 @@ const tarea2 = function () {
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "hhttps://06c9-85-190-229-61.ngrok-free.app/session/" +
+    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
     sessionStorage.token +
     "/";
   var email = document.getElementById("email");
@@ -113,9 +119,11 @@ const endSession = function () {
 };
 const tarea3 = function (event) {
   clickSender(event);
+  event.stopPropagation();
   event.preventDefault();
 
   if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "fin") {
+    console.log(event.target.searchInput.value);
     redirect();
   }
 };
