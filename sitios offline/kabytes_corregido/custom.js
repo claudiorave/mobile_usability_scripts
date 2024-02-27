@@ -1,17 +1,19 @@
-$("a").click(function (ev) {
-  ev.preventDefault();
-  ev.stopPropagation();
-  return false;
-});
+// $("a").click(function (ev) {
+//   ev.preventDefault();
+//   ev.stopPropagation();
+//   return false;
+// });
+
+$("a").attr('href', '#');
 $(document).ready(function () {
   $("#tarea1").modal("show");
 });
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
-    sessionStorage.token +
-    "/";
+      "https://5338-190-191-117-73.ngrok-free.app/session/" +
+      sessionStorage.token +
+      "/";
   var email = document.getElementById("email");
   var password = document.getElementById("pass");
   http.open("PATCH", url, true);
@@ -25,9 +27,10 @@ const endSession = function () {
     active: false,
   });
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  console.log(jsonElements);
   http.send(jsonElements);
 };
+
+
 const disable = function (ev) {
   ev.preventDefault();
   ev.stopPropagation();
@@ -37,45 +40,45 @@ const clickSender = (event, cFunction) => {
   let htmlElements = createXPathFromElement(event.target);
   let current_datetime = new Date();
   let formatted_date =
-    current_datetime.getFullYear().toString().substr(-2) +
-    "-" +
-    (current_datetime.getMonth() + 1) +
-    "-" +
-    current_datetime.getDate() +
-    " " +
-    current_datetime.getHours() +
-    ":" +
-    current_datetime.getMinutes() +
-    ":" +
-    current_datetime.getSeconds();
+      current_datetime.getFullYear().toString().substr(-2) +
+      "-" +
+      (current_datetime.getMonth() + 1) +
+      "-" +
+      current_datetime.getDate() +
+      " " +
+      current_datetime.getHours() +
+      ":" +
+      current_datetime.getMinutes() +
+      ":" +
+      current_datetime.getSeconds();
   makeRequest(
-    JSON.stringify({
-      type: "click",
-      x: event.clientX,
-      y: event.clientY,
-      elements: [{ xpath: htmlElements }],
-      timestamp: new Date(),
-      session: sessionStorage.token,
-      sitio: sessionStorage.sitio,
-      tarea: sessionStorage.tarea,
-    }),
-    cFunction
+      JSON.stringify({
+        type: "click",
+        x: event.clientX,
+        y: event.clientY,
+        elements: [{ xpath: htmlElements }],
+        timestamp: new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea: sessionStorage.tarea,
+      }),
+      cFunction
   );
 };
 
 const startTareaSender = () => {
   let current_datetime = new Date();
   makeRequest(
-    JSON.stringify({
-      type: "click",
-      x: 0,
-      y: 0,
-      elements: [{ xpath: "START TAREA" }],
-      timestamp: new Date(),
-      session: sessionStorage.token,
-      sitio: sessionStorage.sitio,
-      tarea: sessionStorage.tarea,
-    })
+      JSON.stringify({
+        type: "click",
+        x: 0,
+        y: 0,
+        elements: [{ xpath: "START TAREA" }],
+        timestamp: new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea: sessionStorage.tarea,
+      })
   );
 };
 var leerMas = 0;
@@ -90,28 +93,37 @@ const leerMasPlus = (event) => {
   }
 };
 const openTarea2 = (event) => {
+  event.stopPropagation();
   clickSender(event);
-  $("#burga").unbind("click", clickSender);
-  $("#menuTutorial").unbind("click", openTarea2);
-  $("#searchButton").click(clickSender);
-  $("#searchInput").click(clickSender);
+  $("#openSearch").unbind();
+  $("#openSearch").addClass("clickEvent");
+  $("#searchModal").unbind();
+  $("#searchModal").addClass("clickEvent");
+  $("#openSearch").children().addClass("clickEvent");
+  $("#searchInput").unbind("click", clickSender);
+  $("#searchform").addClass("clickEvent");
+  $("#searchform").submit(buscador);
+  $("#burga").removeClass("clickEvent");
+  $("#menuTutorial").removeClass("clickEvent");
+  $("#searchButton").addClass("clickEvent");
+  $("#searchInput").addClass("clickEvent");
   sessionStorage.setItem("tarea", 2);
   closeMenu();
   $("#tarea2").modal("show");
 };
-const openTarea3 = () => {
+const openTarea3 = (event) => {
+  event.stopPropagation();
   closeSearch();
-  $("#searchButton").unbind("click", clickSender);
-  $("#searchInput").unbind("click", clickSender);
+  $("#searchButton").removeClass("clickEvent");
+  $("#searchInput").removeClass("clickEvent");
   sessionStorage.setItem("tarea", 3);
   startTareaSender();
   $(".read-more").click(leerMasPlus);
 };
 
-const startTarea2 = () => {
+const startTarea2 = (event) => {
+  event.stopPropagation();
   startTareaSender();
-  $("#searchform").unbind();
-  $("#searchform").submit(buscador);
 };
 
 const openTarea4 = () => {
@@ -124,13 +136,27 @@ const openTareaHelper = () => {
 const helperModal = () => {
   $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
 };
-const tarea1 = () => {
+const tarea1 = (event) => {
+  event.stopPropagation();
   sessionStorage.setItem("tarea", 1);
   startTareaSender();
   openTareaHelper();
-  $("#burga").click(clickSender);
+  $("#menuTutorial").addClass("clickEvent");
   $("#menuTutorial").click(openTarea2);
 };
+$( document ).ready(function() {
+  $("#burga").unbind();
+  $("#burga").addClass("clickEvent");
+  $("#burga").children().addClass("clickEvent");
+  $("#burga").children().children().addClass("clickEvent");
+});
+
+$("#start_tarea1").unbind();
+$("#start_tarea1").on("click", tarea1);
+$("#start_tarea2").unbind();
+$("#start_tarea2").on("click", startTarea2);
+$("#start_tarea3").unbind();
+$("#start_tarea3").on("click", openTarea3);
 
 const tareaFin = () => {
   event.preventDefault();
@@ -157,8 +183,8 @@ const closeSearch = () => {
 const openSearch = () => {
   event.preventDefault();
   $("#tareaSearch").css("display") == "none"
-    ? $("#tareaSearch").css("display", "block")
-    : $("#tareaSearch").css("display", "none");
+      ? $("#tareaSearch").css("display", "block")
+      : $("#tareaSearch").css("display", "none");
 };
 
 const openMenu = () => {
@@ -167,7 +193,7 @@ const openMenu = () => {
 
 const openSearchDiv = () => {
   $("#buscador").css("display") == "none" &&
-    $("#buscador").css("display", "block");
+  $("#buscador").css("display", "block");
 };
 
 $(document).mouseup(function (e) {

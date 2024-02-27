@@ -111,7 +111,7 @@ $("#presentacion_continue, #presentacion_2_continue").on("click", tarea0);
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
+    "https://5338-190-191-117-73.ngrok-free.app/session/" +
     sessionStorage.token +
     "/";
   var email = document.getElementById("email");
@@ -152,7 +152,6 @@ const openTarea3 = function (event) {
   console.log(event);
   $("#search-3").click(tareaInput);
   $("#searchform").submit(function (evento) {
-    console.log(evento);
     return tarea3(evento);
   });
 };

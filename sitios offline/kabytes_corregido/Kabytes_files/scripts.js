@@ -1,6 +1,6 @@
 $(document).on('ready', function() {  
   
-  $("#menu").mmenu();
+  $("#menu").menu();
 
   $("#search-btn").click(function() {
                 $(".search-hide-form").fadeIn(300, function() {

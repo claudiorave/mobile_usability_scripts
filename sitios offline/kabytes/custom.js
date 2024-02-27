@@ -1,211 +1,213 @@
-$("a").click(function (ev) {
-  ev.preventDefault();
-  ev.stopPropagation();
-  return false;
-});
+// $("a").click(function (ev) {
+//   ev.preventDefault();
+//   ev.stopPropagation();
+//   return false;
+// });
+
+$("a").attr('href', '#');
 $(document).ready(function () {
     $("#tarea1").modal("show");
-  });
-
-  const endSession = function () {
+});
+const endSession = function () {
     var http = new XMLHttpRequest();
     var url =
-      "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
-      sessionStorage.token +
-      "/";
+        "https://5338-190-191-117-73.ngrok-free.app/session/" +
+        sessionStorage.token +
+        "/";
     var email = document.getElementById("email");
     var password = document.getElementById("pass");
     http.open("PATCH", url, true);
-  
+
     http.onreadystatechange = function () {
-      if (http.readyState == 4 && http.status == 200) {
-        //aqui obtienes la respuesta de tu peticion
-      }
+        if (http.readyState == 4 && http.status == 200) {
+            //aqui obtienes la respuesta de tu peticion
+        }
     };
     jsonElements = JSON.stringify({
-      active: false,
+        active: false,
     });
     http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    console.log(jsonElements);
     http.send(jsonElements);
-  };
+};
 
-  const clickSender = (event, cFunction) => {
+
+const disable = function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    return false;
+};
+const clickSender = (event, cFunction) => {
     let htmlElements = createXPathFromElement(event.target);
     let current_datetime = new Date();
     let formatted_date =
-      current_datetime.getFullYear().toString().substr(-2) +
-      "-" +
-      (current_datetime.getMonth() + 1) +
-      "-" +
-      current_datetime.getDate() +
-      " " +
-      current_datetime.getHours() +
-      ":" +
-      current_datetime.getMinutes() +
-      ":" +
-      current_datetime.getSeconds();
+        current_datetime.getFullYear().toString().substr(-2) +
+        "-" +
+        (current_datetime.getMonth() + 1) +
+        "-" +
+        current_datetime.getDate() +
+        " " +
+        current_datetime.getHours() +
+        ":" +
+        current_datetime.getMinutes() +
+        ":" +
+        current_datetime.getSeconds();
     makeRequest(
-      JSON.stringify({
-        type: "click",
-        x: event.clientX,
-        y: event.clientY,
-        elements: [{ xpath: htmlElements }],
-        timestamp: new Date(),
-        session: sessionStorage.token,
-        sitio: sessionStorage.sitio,
-        tarea: sessionStorage.tarea,
-      }),
-      cFunction
+        JSON.stringify({
+            type: "click",
+            x: event.clientX,
+            y: event.clientY,
+            elements: [{ xpath: htmlElements }],
+            timestamp: new Date(),
+            session: sessionStorage.token,
+            sitio: sessionStorage.sitio,
+            tarea: sessionStorage.tarea,
+        }),
+        cFunction
     );
-  };
+};
 
-  const startTareaSender = () => {
+const startTareaSender = () => {
     let current_datetime = new Date();
     makeRequest(
-      JSON.stringify({
-        type: "click",
-        x: 0,
-        y: 0,
-        elements: [{ xpath: "START TAREA" }],
-        timestamp: new Date(),
-        session: sessionStorage.token,
-        sitio: sessionStorage.sitio,
-        tarea: sessionStorage.tarea,
-      })
+        JSON.stringify({
+            type: "click",
+            x: 0,
+            y: 0,
+            elements: [{ xpath: "START TAREA" }],
+            timestamp: new Date(),
+            session: sessionStorage.token,
+            sitio: sessionStorage.sitio,
+            tarea: sessionStorage.tarea,
+        })
     );
-  };
-$("#submmit-button").click(function (ev) {
-  ev.preventDefault();
-  ev.stopPropagation();
-  return false;
-});
-
+};
 var leerMas = 0;
 
-const leerMasPlus = () => {
-  leerMas++;
-  $(event.target).unbind("click", leerMasPlus);
-  if (leerMas > 2) {
-    endSession();
-    $("#tarea4").modal("show");
-  }
+const leerMasPlus = (event) => {
+    leerMas++;
+    clickSender(event);
+    $(event.target).unbind("click", leerMasPlus);
+    if (leerMas > 2) {
+        endSession();
+        $("#tarea4").modal("show");
+    }
 };
 const openTarea2 = (event) => {
+    event.stopPropagation();
     clickSender(event);
-  $("#burga").unbind("click", clickSender);
-  $("#menuTutorial").unbind("click", openTarea2);
-  $("#searchButton").click(clickSender);
-  $("#searchInput").click(clickSender);
-  sessionStorage.setItem("tarea", 2);
-  closeMenu();
-  $("#tarea2").modal("show");
-};
-const openTarea3 = () => {
-    closeSearch();
-    $("#searchButton").unbind("click", clickSender);
+    $("#openSearch").unbind();
+    $("#openSearch").addClass("clickEvent");
+    $("#searchModal").unbind();
+    $("#searchModal").addClass("clickEvent");
+    $("#openSearch").children().addClass("clickEvent");
     $("#searchInput").unbind("click", clickSender);
-  sessionStorage.setItem("tarea", 3);
-  closeSearch();
-  $(".read-more").click(leerMasPlus);
+    $("#searchform").addClass("clickEvent");
+    $("#searchform").submit(buscador);
+    $("#burga").removeClass("clickEvent");
+    $("#menuTutorial").removeClass("clickEvent");
+    $("#searchButton").addClass("clickEvent");
+    $("#searchInput").addClass("clickEvent");
+    sessionStorage.setItem("tarea", 2);
+    closeMenu();
+    $("#tarea2").modal("show");
+};
+const openTarea3 = (event) => {
+    event.stopPropagation();
+    closeSearch();
+    $("#searchButton").removeClass("clickEvent");
+    $("#searchInput").removeClass("clickEvent");
+    sessionStorage.setItem("tarea", 3);
+    startTareaSender();
+    $(".read-more").click(leerMasPlus);
 };
 
-const startTarea2 = () => {
+const startTarea2 = (event) => {
+    event.stopPropagation();
     startTareaSender();
-    $("#searchform").unbind();
-
-  $("#searchform").submit(buscador);
 };
 
 const openTarea4 = () => {
-  $(".menorPrecio").click(tareaFin);
+    $(".menorPrecio").click(tareaFin);
 };
-
 const openTareaHelper = () => {
     $("#sidebar").click(helperModal);
-  };
-  
-  const helperModal = () => {
+};
+
+const helperModal = () => {
     $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
-  };
-
-const tarea2 = () => {
-  event.preventDefault();
-
-  $("#tarea2").modal("show");
 };
-const tarea1 = () => {
-  sessionStorage.setItem("tarea", 1);
-  startTareaSender();
-  openTareaHelper();
-  $("#burga").click(clickSender);
-  $("#menuTutorial").click(openTarea2);
+const tarea1 = (event) => {
+    event.stopPropagation();
+    sessionStorage.setItem("tarea", 1);
+    startTareaSender();
+    openTareaHelper();
+    $("#menuTutorial").addClass("clickEvent");
+    $("#menuTutorial").click(openTarea2);
 };
+$( document ).ready(function() {
+    $("#burga").unbind();
+    $("#burga").addClass("clickEvent");
+    $("#burga").children().addClass("clickEvent");
+    $("#burga").children().children().addClass("clickEvent");
+});
+
+$("#start_tarea1").unbind();
+$("#start_tarea1").on("click", tarea1);
+$("#start_tarea2").unbind();
+$("#start_tarea2").on("click", startTarea2);
+$("#start_tarea3").unbind();
+$("#start_tarea3").on("click", openTarea3);
 
 const tareaFin = () => {
-  event.preventDefault();
-  console.log("TAREFA");
+    event.preventDefault();
 
-  $("#tareaFin").modal("show");
-  return true;
+    $("#tareaFin").modal("show");
+    return true;
 };
 
 const buscador = () => {
-  event.preventDefault();
-  if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "usuario") {
-    $("#tarea33").modal("show");
-  }
-};
-const checkMail = () => {
-  event.preventDefault();
-  console.log(event.target.contactEmail.value);
-  if (
-    event.target.contactEmail.value
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-  ) {
-    $("#tarea4").modal("show");
-  }
+    event.preventDefault();
+    if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "usuario") {
+        $("#tarea33").modal("show");
+    }
 };
 
 const closeMenu = () => {
-  $("#menu").removeClass("mm-current mm-opened");
+    $("#menu").removeClass("mm-current mm-opened");
 };
 
 const closeSearch = () => {
-  $("#tareaSearch").css("display", "none");
+    $("#tareaSearch").css("display", "none");
 };
 
 const openSearch = () => {
-  event.preventDefault();
-  $("#tareaSearch").css("display") == "none"
-    ? $("#tareaSearch").css("display", "block")
-    : $("#tareaSearch").css("display", "none");
+    event.preventDefault();
+    $("#tareaSearch").css("display") == "none"
+        ? $("#tareaSearch").css("display", "block")
+        : $("#tareaSearch").css("display", "none");
 };
 
 const openMenu = () => {
-  $("#menu").addClass("mm-current mm-opened");
+    $("#menu").addClass("mm-current mm-opened");
 };
 
 const openSearchDiv = () => {
-  $("#buscador").css("display") == "none" &&
+    $("#buscador").css("display") == "none" &&
     $("#buscador").css("display", "block");
 };
 
 $(document).mouseup(function (e) {
-  var container = $("#menu");
+    var container = $("#menu");
 
-  // if the target of the click isn't the container nor a descendant of the container
-  if (!container.is(e.target) && container.has(e.target).length === 0) {
-    container.removeClass("mm-current mm-opened");
-  }
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.removeClass("mm-current mm-opened");
+    }
 
-  var searchDiv = $("#buscador");
-  var searchForm = $("#searchform");
+    var searchDiv = $("#buscador");
+    var searchForm = $("#searchform");
 
-  if (!searchForm.is(e.target) && searchForm.has(e.target).length === 0) {
-    searchDiv.css("display", "none");
-  }
+    if (!searchForm.is(e.target) && searchForm.has(e.target).length === 0) {
+        searchDiv.css("display", "none");
+    }
 });

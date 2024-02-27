@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src=".\MobileEvents.js"></script>
+    <script src="./MobileEvents.js"></script>
     <script src="../../scriptDot.js"></script>
     <script src="../../elementosRadio.js"></script>
     <script src="../../pinchZoom.js"></script>
@@ -687,7 +687,7 @@
                 id="searchButton"
                 onclick="openSearchDiv()"
               >
-                <i class="fi-xnsuhl-search" style="color: black"></i>
+                <i id="openSearch" class="fi-xnsuhl-search" style="color: black"></i>
               </li>
             </ul>
           </div>
@@ -1704,7 +1704,7 @@
             </div>
           </div>
         </form>
-        <div class="bg"></div>
+        <div id="searchModal" class="bg"></div>
       </div>
     </div>
     <!-- end main container -->
@@ -1750,11 +1750,11 @@
 
     <div id="mm-blocker" class="mm-slideout"></div>
     <div class="open-menu fixed mm-slideout">
-      <a href="#menu" id="burga" onclick="openMenu()"
+      <a href="#menu"
         ><span
           style="z-index: 999999"
           class="glyphicon glyphicon-menu-hamburger"
-          ><i class="fi-xnsuxl-three-bars-solid"></i></span
+          ><i id="burga"  onclick="openMenu()" class="fi-xnsuxl-three-bars-solid"></i></span
       ></a>
     </div>
 
@@ -1847,7 +1847,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="tarea1()"
+              id="start_tarea1"
             >
               Continuar
             </button>
@@ -1876,7 +1876,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="startTarea2()"
+              id="start_tarea2"
             >
               Continuar
             </button>
@@ -1904,7 +1904,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="openTarea3()"
+              id="start_tarea3"
             >
               Continuar
             </button>

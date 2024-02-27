@@ -1,8 +1,9 @@
 var clicks = 0;
+
 $(document).ready(function () {
   $("#myModal").modal("show");
 });
-const clickSender = (event) => {
+const clickSender = (event, cFunction) => {
   removeDotItemPrevious();
   removeStyleElementsInRadioPrevious();
 
@@ -10,28 +11,28 @@ const clickSender = (event) => {
   let htmlElements = createXPathFromElement(event.target);
   let current_datetime = new Date();
   let formatted_date =
-    current_datetime.getFullYear().toString().substr(-2) +
-    "-" +
-    (current_datetime.getMonth() + 1) +
-    "-" +
-    current_datetime.getDate() +
-    " " +
-    current_datetime.getHours() +
-    ":" +
-    current_datetime.getMinutes() +
-    ":" +
-    current_datetime.getSeconds();
+      current_datetime.getFullYear().toString().substr(-2) +
+      "-" +
+      (current_datetime.getMonth() + 1) +
+      "-" +
+      current_datetime.getDate() +
+      " " +
+      current_datetime.getHours() +
+      ":" +
+      current_datetime.getMinutes() +
+      ":" +
+      current_datetime.getSeconds();
   makeRequest(
-    JSON.stringify({
-      type: "click",
-      x: event.clientX,
-      y: event.clientY,
-      elements: [{ xpath: htmlElements }],
-      timestamp: new Date(),
-      session: sessionStorage.token,
-      sitio: sessionStorage.sitio,
-      tarea: sessionStorage.tarea,
-    })
+      JSON.stringify({
+        type: "click",
+        x: event.clientX,
+        y: event.clientY,
+        elements: [{ xpath: htmlElements }],
+        timestamp: new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea: sessionStorage.tarea,
+      }),
   );
 };
 const startAnimation = () => {
@@ -44,23 +45,29 @@ const stopAnimation = () => {
 const startTareaSender = () => {
   let current_datetime = new Date();
   makeRequest(
-    JSON.stringify({
-      type: "click",
-      x: 0,
-      y: 0,
-      elements: [{ xpath: "START TAREA" }],
-      timestamp: new Date(),
-      session: sessionStorage.token,
-      sitio: sessionStorage.sitio,
-      tarea: sessionStorage.tarea,
-    })
+      JSON.stringify({
+        type: "click",
+        x: 0,
+        y: 0,
+        elements: [{ xpath: "START TAREA" }],
+        timestamp: new Date(),
+        session: sessionStorage.token,
+        sitio: sessionStorage.sitio,
+        tarea: sessionStorage.tarea,
+      })
   );
 };
 const redirect = () => {
   $("#spinner").show();
   window.location.replace(
-    "/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
+      "/mobile_usability_scripts/sitios offline/balcon/Somos Balcón, Somos Plantennials – Balcón Plantas.htm"
   );
+};
+const tarea2 = function (event) {
+  event.stopPropagation();
+  sessionStorage.setItem("tarea", 2);
+  startTareaSender();
+  $("#usabilidadSpan").click(tarea2Helper);
 };
 const clickReact = function (event) {
   clickSender(event);
@@ -70,37 +77,43 @@ const clickReact = function (event) {
   $(target).parent().parent().hide();
   if (clicks == 3) {
     $("#tarea2").modal("show");
+    $("#tarea2_start").on("click", tarea2);
   }
 };
 const tarea2Helper = function (event) {
+  event.stopPropagation();
   clickSender(event);
-  event.preventDefault();
+  $("#startTarea3").on("click", openTarea3);
   $("#tarea3").modal("show");
 };
-const tarea1 = () => {
-  console.log("TAREA 1");
-  event.preventDefault();
+
+const tarea1 = (event) => {
+  event.stopPropagation();
   sessionStorage.setItem("tarea", 1);
   startTareaSender();
   openTareaHelper();
   $(".sgpb-popup-close-button-2").on("touchstart mousedown click", clickReact);
 };
-$("#tarea1_start").unbind();
-console.log("UNBIND BUTTON");
-$("#tarea1_start").on("click", tarea1);
-
-const tarea2 = function () {
-  sessionStorage.setItem("tarea", 2);
+const tarea0 = (event) => {
+  event.stopPropagation();
+  sessionStorage.setItem("tarea", 0);
   startTareaSender();
-
-  $("#usabilidadSpan").click(tarea2Helper);
 };
+const tareaInput = (event) => {
+  event.stopPropagation();
+  clickSender(event);
+};
+$("#tarea1_start").unbind();
+$("#tarea1_start").on("click", tarea1);
+$("#presentacion_continue, #presentacion_2_continue").unbind();
+$("#presentacion_continue, #presentacion_2_continue").on("click", tarea0);
+
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-    "https://3fe3-85-190-229-79.ngrok-free.app/session/" +
-    sessionStorage.token +
-    "/";
+      "https://5338-190-191-117-73.ngrok-free.app/session/" +
+      sessionStorage.token +
+      "/";
   var email = document.getElementById("email");
   var password = document.getElementById("pass");
   http.open("PATCH", url, true);
@@ -114,34 +127,33 @@ const endSession = function () {
     active: false,
   });
   http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  console.log(jsonElements);
   http.send(jsonElements);
 };
 const tarea3 = function (event) {
-  clickSender(event);
-  event.stopPropagation();
   event.preventDefault();
-
   if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "fin") {
-    console.log(event.target.searchInput.value);
     redirect();
+    // endSession();
   }
 };
 
-const openTareaHelper = () => {
+const openTareaHelper = () =>{
   $("#sidebar").click(helperModal);
 };
 
 const helperModal = () => {
   $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
-};
+}
 
-const openTarea3 = function () {
+const openTarea3 = function (event) {
+  event.stopPropagation();
   sessionStorage.setItem("tarea", 3);
   startTareaSender();
-
-  $("#searchform").submit(function () {
-    return tarea3(event);
+  console.log(event);
+  $("#search-3").click(tareaInput);
+  $("#searchform").submit(function (evento) {
+    console.log(evento);
+    return tarea3(evento);
   });
 };
 
@@ -160,7 +172,7 @@ $(".popup").click(function (ev) {
   ev.stopPropagation();
   return false;
 });
-$("#searchform").submit(function (event) {
-  clickSender(event);
-  event.preventDefault();
-});
+//   $("#searchform").submit(function (event) {
+//   clickSender(event);
+//   event.preventDefault();
+// });

@@ -50,36 +50,43 @@ const startTareaSender = () => {
     })
   );
 };
-const openTarea2 = () => {
+
+const openTarea2 = (event) => {
+    event.stopPropagation();
   sessionStorage.setItem("tarea", 2);
   startTareaSender();
-  $("#tareaSearch").click(clickSender);
-  $("#searchIcon").click(clickSender);
   closeMenu();
   $("#tareaSearch").submit(buscador);
 };
-const openTarea3 = () => {
-  sessionStorage.setItem("tarea", 3);
+const openTarea3 = (event) => {
+    event.stopPropagation();
+    sessionStorage.setItem("tarea", 3);
   startTareaSender();
-  $("#formMail").click(clickSender);
-  $("#suscribirmeSubmit").click(clickSender);
+    $("#suscribeMail").addClass("clickEvent");
+    $("#suscribirmeSubmit").addClass("clickEvent");
   closeSearch();
   $("#formMail").submit(checkMail);
 };
 
-const openTarea4 = () => {
-  sessionStorage.setItem("tarea", 4);
+const openTarea4 = (event) => {
+    event.stopPropagation();
+    sessionStorage.setItem("tarea", 4);
   startTareaSender();
-  $("#formMail").unbind("click", clickSender);
-  $("#suscribirmeSubmit").unbind("click", clickSender);
+    $("#suscribeMail").removeClass("clickEvent");
+    $("#suscribirmeSubmit").removeClass("clickEvent");
+    $(".menorPrecio").addClass("clickEvent");
   $(".menorPrecio").click(tareaFin);
 };
 const tarea2 = (event) => {
-  event.preventDefault();
-  clickSender(event);
-  $("#burga").unbind("click", clickSender);
-
+  $("#burga").removeClass("clickEvent");
+  $("#tareaMenu").removeClass("clickEvent");
+  $("#searchIcon").addClass("clickEvent");
+    $("#searchInput").addClass("clickEvent");
   $("#tarea2").modal("show");
+};
+
+const tarea2_start = (event) => {
+    clickSender(event);
 };
 const openTareaHelper = () => {
   $("#sidebar").click(helperModal);
@@ -88,14 +95,22 @@ const openTareaHelper = () => {
 const helperModal = () => {
   $("#tarea" + sessionStorage.getItem("tarea")).modal("show");
 };
-const tarea1 = () => {
-  sessionStorage.setItem("tarea", 1);
+const tarea1 = (event) => {
+    event.stopPropagation();
+    sessionStorage.setItem("tarea", 1);
   startTareaSender();
   openTareaHelper();
-  $("#burga").click(clickSender);
+    $("#tareaMenu").addClass("clickEvent");
   $("#tareaMenu").click(tarea2);
 };
-
+$("#start_tarea1").unbind();
+$("#start_tarea1").on("click", tarea1);
+$("#start_tarea2").unbind();
+$("#start_tarea2").on("click", openTarea2);
+$("#start_tarea3").unbind();
+$("#start_tarea3").on("click", openTarea3);
+$("#start_tarea4").unbind();
+$("#start_tarea4").on("click", openTarea4);
 const tareaFin = (event) => {
   clickSender(event);
 
@@ -103,15 +118,16 @@ const tareaFin = (event) => {
 };
 const redirect = () => {
   $("#spinner").show();
-  window.location.replace("/kabytes_corregido/Kabytes.htm");
+  window.location.replace("/mobile_usability_scripts/sitios offline/kabytes_corregido/Kabytes.htm");
 };
 const buscador = () => {
   event.preventDefault();
   if (event.target.searchInput.value.toLowerCase().replace(/\s/g, '') === "plantas") {
-    $("#tareaSearch").unbind("click", clickSender);
-    $("#searchIcon").unbind("click", clickSender);
+    $("#tareaSearch").removeClass("clickEvent");
+      $("#searchIcon").removeClass("clickEvent");
+      $("#searchInput").removeClass("clickEvent");
 
-    $("#tarea3").modal("show");
+      $("#tarea3").modal("show");
     // endSession();
   }
 };

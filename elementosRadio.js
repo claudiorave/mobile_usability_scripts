@@ -8,8 +8,13 @@ function intersectan(center_x, center_y, radio, rect) {
 }
 
 function elementosRadio() {
-  window.addEventListener("click", (event) => {
+  document.addEventListener("click", (event) => {
     printProperties(event.clientX, event.clientY, 55);
+    console.log(event.target);
+    let clase = event.target.getAttribute("class")
+    console.log(clase);
+    let esClick = clase?.includes("clickEvent")
+    console.log(esClick);
     removeDotItemPrevious();
     removeStyleElementsInRadioPrevious();
 
@@ -20,11 +25,12 @@ function elementosRadio() {
       55,
       document.getElementsByTagName("*")
     );
+    let tipoEvento = esClick ? "click" : "misclick";
     let current_datetime = new Date();
     let formatted_date = current_datetime.getFullYear().toString().substr(-2) + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
     makeRequest(
       JSON.stringify({
-        type: "misclick",
+        type: tipoEvento,
         x: event.clientX,
         y: event.clientY,
         elements: htmlElements,

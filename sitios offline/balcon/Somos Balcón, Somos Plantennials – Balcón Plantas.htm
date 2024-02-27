@@ -3599,7 +3599,7 @@
                   aria-label="Menú principal"
                 >
                   <span class="border"></span>
-                  <div><span class="icon">n</span></div>
+                  <div><span id="burga" class="icon clickEvent">n</span></div>
                 </li>
 
                 <li class="nav-item account">
@@ -3634,13 +3634,14 @@
                   </a>
                 </li>
                 <li class="nav-item last search">
-                  <div><span class="icon">s</span></div>
+                  <div><span id="searchIcon" class="icon">s</span></div>
                 </li>
                 <li class="search-outer-wrap">
                   <div class="search-wrap">
                     <form action="/search" method="get" id="tareaSearch">
                       <input
                         class="search-input"
+                        id="searchInput"
                         name="searchInput"
                         type="text"
                         placeholder="Buscar"
@@ -5535,6 +5536,7 @@
                   <input
                     class="email"
                     name="contactEmail"
+                    id="suscribeMail"
                     type="email"
                     placeholder="Tu email"
                   />
@@ -5547,6 +5549,7 @@
                   <input
                     class="submit"
                     name="subscribe"
+                    id="suscribirmeSubmit"
                     type="submit"
                     value="suscribirme"
                   />
@@ -6055,8 +6058,8 @@
             <button
               type="button"
               class="btn btn-dark"
+              id="start_tarea1"
               data-bs-dismiss="modal"
-              onclick="tarea1()"
             >
               Continuar
             </button>
@@ -6085,7 +6088,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="openTarea2()"
+              id="start_tarea2"
             >
               Continuar
             </button>
@@ -6115,7 +6118,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="openTarea3()"
+              id="start_tarea3"
             >
               Continuar
             </button>
@@ -6170,7 +6173,7 @@
               type="button"
               class="btn btn-dark"
               data-bs-dismiss="modal"
-              onclick="openTarea4()"
+              id="start_tarea4"
             >
               Continuar
             </button>
