@@ -11,7 +11,7 @@ $(document).ready(function () {
 const endSession = function () {
     var http = new XMLHttpRequest();
     var url =
-        "https://5338-190-191-117-73.ngrok-free.app/session/" +
+        "https://df7c-190-191-105-21.ngrok-free.app/session/" +
         sessionStorage.token +
         "/";
     var email = document.getElementById("email");

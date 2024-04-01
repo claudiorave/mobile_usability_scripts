@@ -17,7 +17,7 @@
   sessionStorage.setItem("token", token());
   function startSession(token) {
   var http = new XMLHttpRequest();
-  var url = "https://5338-190-191-117-73.ngrok-free.app/session/";
+  var url = "https://df7c-190-191-105-21.ngrok-free.app/session/";
   var json = JSON.stringify({
     token: token,
   });
@@ -26,8 +26,8 @@
     "./sitios offline/IOMAHome/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html",
     "./sitios offline/IOMAHome corregido/Bienvenidxs a IOMA – La Obra Social de lxs Empleadxs de la Provincia de Buenos Aires.html"
 ]
-const randomCircuito = circuitos[Math.floor(Math.random() * circuitos.length)];
-
+//const randomCircuito = circuitos[Math.floor(Math.random() * circuitos.length)];
+const randomCircuito = circuitos[1];
   http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 201) {
       window.location.replace(randomCircuito);

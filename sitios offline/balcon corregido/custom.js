@@ -1,8 +1,11 @@
-$("a").click(function (ev) {
-  ev.preventDefault();
-  ev.stopPropagation();
-  return false;
-});
+// $("a").click(function (ev) {
+//   ev.preventDefault();
+//   ev.stopPropagation();
+//   return false;
+// });
+
+$("a").attr('href', '#');
+
 $(document).ready(function () {
   $("#tarea1").modal("show");
 });
