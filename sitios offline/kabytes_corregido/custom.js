@@ -11,7 +11,7 @@ $(document).ready(function () {
 const endSession = function () {
   var http = new XMLHttpRequest();
   var url =
-      "https://df7c-190-191-105-21.ngrok-free.app/session/" +
+      "https://mobilelogger.claudioraverta.com/session/" +
       sessionStorage.token +
       "/";
   var email = document.getElementById("email");

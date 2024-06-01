@@ -28,7 +28,7 @@ makeRequest(json);
 
 function makeRequest(jsonElements, cFunction = null) {
   var http = new XMLHttpRequest();
-  var url = "https://df7c-190-191-105-21.ngrok-free.app/event/";
+  var url = "https://mobilelogger.claudioraverta.com/event/";
   /*var email = document.getElementById('email');
 var password = document.getElementById('pass');"*/
   http.open("POST", url, true);
